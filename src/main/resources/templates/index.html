@@ -12,7 +12,16 @@
     <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
 </head>
 <body>
-    <nav class="ui inverted attached segment m-shadow-small m-padded-tb-mini" >
+
+    <!--顶部图片-->
+    <div class="m-bg-class_outer" style="width: 100%;height: 750px">
+        <img src="../static/images/Konachan-329266-Large.png" th:src="@{/static/images/Konachan-329266-Large.png}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
+        <div class="m-bg-class_cover" align="center">
+            <h1 class=" blog-title" align="center">一个喜欢动漫，乐观的人</h1>
+            <h2 class="blog-description" style="">Our meeting is just meaningful only if you wanna see me. </h2>
+        </div>
+    </div>
+    <nav id="nav" class="ui inverted attached segment m-shadow-small m-padded-tb-mini"  style="position:fixed;height: 68px;z-index: 1">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">ZHEMU</h2>
@@ -21,36 +30,27 @@
                 <a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" clone icon"></i>归档</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" info icon"></i>关于我</a>
-            <div class="right m-item m-mobile-hide item">
-                <div class="ui inverted transparent icon input">
-                    <input type="text" placeholder="Search..">
-                    <i class="search link icon"></i>
+                <div class="right m-item m-mobile-hide item">
+                    <div class="ui inverted transparent icon input">
+                        <input type="text" placeholder="Search..">
+                        <i class="search link icon"></i>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <a href="#" class="ui menu toggle black icon button m-right-top m-moblie-show">
             <i class="sidebar icon"></i>
         </a>
     </nav>
+    <div id="waypoint" ></div>
 
-    <div id="waypoint" class="ui container  m-padded-tb-large">
+    <div  class="ui container  m-padded-tb-large animated zoomIn">
         <div class="ui stackable  grid">
 <!--            左边文章列表-->
-            <div class=" eleven wide column">
+            <div class=" wide column">
 <!--                header-->
-                <div class="ui top attached segment">
-                    <div class="ui middle aligned two column grid">
-                        <div class="column">
-                            <h3 class="ui teal header">博客</h3>
-                        </div>
-                        <div class="right aligned column" style="font-weight: bold">
-                            共 <h2 class="ui orange header m-inline-block">14</h2> 篇博客
-                        </div>
-                    </div>
-                </div>
 <!--                content-->
-                <div class="ui teal segment ">
+                <div class="ui teal attached segment ">
                     <div class="ui padded vertical segment m-padded-tb-large m-mobile-lr-clear">
                         <div class="ui mobile reversed stackable grid">
                             <div class="eleven wide column">
@@ -88,115 +88,18 @@
                     </div>
                 </div>
 <!--                bottom-->
-                <div class="ui bottom attached segment">
+<!--                <div class="ui bottom attached segment">-->
                     <div class="ui middle aligned two column grid">
-                        <div class="column">
+                        <div class="column m-margin-top">
                             <a href="#" class="ui tiny teal button">上一页</a>
                         </div>
-                        <div class="right aligned column" style="font-weight: bold">
-                            <a href="#" class="ui tiny teal button">下一页</a>
+                        <div class="right aligned column m-margin-top">
+                            <a href="#" class="ui avatar tiny teal button">下一页</a>
                         </div>
                     </div>
-                </div>
+<!--                </div>-->
             </div>
 <!--            右边列表-->
-            <div class=" five wide column">
-                <!--            分类-->
-                <div class="ui segments">
-                    <div class="ui secondary segment">
-                        <div class="ui two column stackable grid">
-                            <div class="column">
-                                <i class="idea icon"></i>分类
-                            </div>
-                            <div class="right aligned column">
-                                <a href="#" target="_blank">more<i class="angle double right icon"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="ui teal segment">
-                                <div class="ui fluid vertical menu">
-                                    <a href="#" class="item">
-                                        学习日志<div class="ui teal  label">13</div>
-                                    </a>
-                                    <a href="#" class="item">
-                                        思考与总结<div class="ui teal  label">13</div>
-                                    </a>
-                                    <a href="#" class="item">
-                                        清单<div class="ui teal   label">13</div>
-                                    </a>
-                                    <a href="#" class="item">
-                                        Redis<div class="ui teal  label">13</div>
-                                    </a>
-                                    <a href="#" class="item">
-                                        项目<div class="ui teal   label">13</div>
-                                    </a>
-                                    <a href="#" class="item">
-                                        认知升级<div class="ui teal  label">13</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                <!--            标签-->
-                <div class="ui segments m-margin-top-large">
-                    <div class="ui secondary segment">
-                        <div class="ui two column stackable grid">
-                            <div class="column">
-                                <i class="idea icon"></i>标签
-                            </div>
-                            <div class="right aligned column">
-                                <a href="#" target="_blank">more<i class="angle double right icon"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui teal segment">
-                        <a href="#" class="ui teal  basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" class="ui teal basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" class="ui teal  basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" class="ui teal  basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" class="ui teal  basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" class="ui teal  basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" class="ui teal  basic label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                    </div>
-                </div>
-                <!--            二维码-->
-                <div class="ui segments m-margin-top-large">
-                    <div class="ui secondary segment ">
-                       <i class="bookmark icon"></i>最新推荐
-                    </div>
-                    <div class="ui segment">
-                        <a href="#" target="_blank" class="m-black m-padded-tb-tiny">用户故事</a>
-                    </div>
-                    <div class="ui segment">
-                        <a href="#" target="_blank" class="m-black m-padded-tb-tiny">用户故事</a>
-                    </div>
-                    <div class="ui segment">
-                        <a href="#" target="_blank" class="m-black m-padded-tb-tiny">用户故事</a>
-                    </div>
-                    <div class="ui segment">
-                        <a href="#" target="_blank" class="m-black m-padded-tb-tiny">用户故事</a>
-                    </div>
-                </div>
-                <h4 class="ui horizontal divider header">
-                    关注我
-                </h4>
-                <div class="ui centered card"  style="width: 150px">
-                    <img src="../static/images/weixin.jpg" class="ui rounded image">
-                </div>
-            </div>
         </div>
     </div>
     <div id="toolbar" class="m-fixed m-right-bottom m-margin-top-large" style="display: none">
@@ -269,6 +172,8 @@
             }
         }
     })
+
+
 </script>
 </body>
 </html>

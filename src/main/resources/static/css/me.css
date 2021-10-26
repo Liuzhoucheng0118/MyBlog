@@ -1,12 +1,30 @@
 body{
     font-family: 微软雅黑;
-    background: url("../images/Konachan-329266-Large.png");
+    /*background: url("../images/Konachan-329266-Large.png");*/
     background-size:100%;
     /*background-repeat: no-repeat;*/
     background-attachment: fixed;
 }
 
+.m-bg-class_cover {
+    width: 100%;
+    height: 50%;
+    color: white;
+    /*line-height: ;*/
+    padding-left: 6px;
+    /*color: #FFFFFF;*/
+    /*font-size: 26px;*/
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
 
+
+.m-bg{
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
 
 .m-padded-mini{
         padding: 0.3em!important;
@@ -69,6 +87,7 @@ body{
 .m-margin-bottom-small{
     margin-bottom: 0.5em!important;
 }
+
 
 /*text*/
 
@@ -162,4 +181,16 @@ body{
         padding-right: 0!important;
         padding-left: 0!important;
     }
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    font-weight: 300;
+}
+
+.blog-description {
+    font-size: 1.1rem;
+    font-weight: 400;
 }
