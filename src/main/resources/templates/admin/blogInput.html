@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ZHEMU的小世界</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <link rel="stylesheet"  href="../../static/lib/editormd/css/editormd.min.css">
+</head>
+<body>
+    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">管理后台</h2>
+                <a href="#" class="active m-item item m-mobile-hide"><i class=" home icon"></i>文章</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class=" idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+                <div class="right m-item m-mobile-hide menu">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" src="../../static/images/avater.png">
+                            ZHEMU
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class=" menu">
+                            <a href="#" class=" item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-moblie-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+<!--    二级导航-->
+        <div class="ui attached pointing menu">
+            <div class="ui container">
+                <div class="right menu">
+                    <a href="#" class="item">发布</a>
+                    <a href="#" class="teal active item">列表</a>
+                </div>
+            </div>
+        </div>
+<!--    中间容器-->
+
+        <div class="m-container-small m-padded-tb-big">
+            <div class="ui container">
+                <form action="#" method="post" class="ui segment form">
+                    <div class="required field">
+                        <div class="ui left labeled input">
+                            <div class="ui selection compact teal basic dropdown label">
+                                <input type="hidden" value="原创">
+                                <i class="dropdown icon"></i>
+                                <div class="text">原创</div>
+                                <div class="menu">
+                                    <div class="item" data-value="原创">原创</div>
+                                    <div class="item" data-value="原创">转载</div>
+                                    <div class="item" data-value="原创">收藏</div>
+                                </div>
+                            </div>
+                            <input type="text" name="title" placeholder="标题">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div id="md-content" style="z-index: 1 !important;">
+                            <textarea placeholder="博客内容" name="content">
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="two fields">
+                            <div class="field">
+                                <div class="ui left labeled action input">
+                                    <label class="ui compact teal basic label">分类</label>
+                                    <div class="ui fluid selection  dropdown">
+                                        <input type="hidden" value="type">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">分类</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="1">错误日志</div>
+                                            <div class="item" data-value="2">开发手册</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left labeled action input">
+                                    <label class="ui compact teal basic label">标签</label>
+                                    <div class="ui fluid selection dropdown ">
+                                        <input type="hidden" value="tag">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">标签</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="1">Java</div>
+                                            <div class="item" data-value="2">Redis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="filed">
+                            <div class="ui left labeled input">
+                                <label class="ui teal basic label">封面</label>
+                                <input type="text" name="indexPicture" placeholder="首图引用地址">
+                            </div>
+                        </div>
+                    <div class="inline fields m-margin-top-large">
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" id="recommend" name="recommend" checked class="hidden">
+                                    <label for="recommend">推荐</label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" id="shareInfo" name="shareInfo" class="hidden">
+                                    <label for="shareInfo">转载声明</label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" id="appreciation" name="appreciation" class="hidden">
+                                    <label for="appreciation">赞赏</label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" id="comment" name="comment" class="hidden">
+                                    <label for="comment">评论</label>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="ui error message"></div>
+                    <div class="ui right aligned container">
+                        <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                        <button  class="ui teal button">保存</button>
+                        <button  class="ui orange button">发布</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <br>
+    <br>
+    <footer class="ui inverted vertical segment m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="five wide column">
+                    <div class="ui  inverted link list">
+                        <h4 class="ui inverted header">个人联系方式</h4>
+                        <a href="#" class="item m-text-thin m-text-spaced ">Email:369039150@qq.com</a>
+                        <a href="#" class="item m-text-thin m-text-spaced ">QQ:369039150</a>
+                        <p class="m-padded-small m-text-spaced m-opacity-miniplus">这是我的个人博客，会分享一些我自己在学习过程中遇到的种种问题，希望可以帮助到来到这里的人</p>
+                    </div>
+                </div>
+                <div class="three wide column ">
+                    <div class="ui inverted link list">
+                        <img src="../../static/images/weixin.jpg" class="ui  centered bordered rounded image " alt="" style="width: 120px">
+                    </div>
+                    </div>
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <img src="../../static/images/qq.jpg" class="ui  centered bordered rounded image " alt="" style="width: 120px">
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui inverted link list">
+                        <h4 class="ui inverted header">最新博客</h4>
+                        <a href="#" class="item">文章：</a>
+                        <a href="#" class="item">访问：</a>
+                        <a href="#" class="item">点赞：</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui inverted section divider"></div>
+                <p class="m-text-thin m-text-spaced m-opacity-miniplus">Copyright @ 2021-2022 Study by ZHEMU</p>
+        </div>
+
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="../../static/lib/editormd/editormd.js"></script>
+    <script>
+
+        var contentEditor;
+        //初始化markdown
+        $(function() {
+            contentEditor = editormd("md-content", {
+                width   : "100%",
+                height  : 640,
+                syncScrolling : "single",
+                path    : "../../static/lib/editormd/lib/"
+            });
+        });
+
+
+    $('.meau.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    $('.ui.segment.form').form({
+        fields : {
+            title : {
+                identifier: 'title',
+                rules: [{
+                    type : 'empty',
+                    prompt : '标题：请输入博客标题'
+                }]
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
