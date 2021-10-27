@@ -8,7 +8,7 @@ body{
 
 .m-bg-class_cover {
     width: 100%;
-    height: 50%;
+    height: 55%;
     color: white;
     /*line-height: ;*/
     padding-left: 6px;
@@ -19,6 +19,14 @@ body{
     bottom: 0px;
 }
 
+.m-bg-class_outer {
+    display: block;
+    /*width: 550px;*/
+    /*height: 276px;*/
+    /*margin: 10px auto 0 0;*/
+    position: relative;
+    overflow: hidden;
+}
 
 .m-bg{
     width: 100%;
@@ -131,7 +139,7 @@ body{
 
 /*shadow*/
 .m-shadow-small{
-    -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+    -webkit-box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2) !important;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
 }
 
@@ -187,10 +195,11 @@ body{
     font-size: 2.5rem;
     line-height: 1.5;
     margin-bottom: 0.75rem;
-    font-weight: 300;
+    font-weight: bold;
 }
 
 .blog-description {
     font-size: 1.1rem;
-    font-weight: 400;
+    width: 70%;
+    font-weight: 800;
 }

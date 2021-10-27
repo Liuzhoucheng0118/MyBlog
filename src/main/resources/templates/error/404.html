@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ZHEMU的小世界</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <link rel="stylesheet" href="../static/css/typo.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
+
+</head>
+<body>
+<nav th:replace="_fragments :: menu()" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"  style="position:fixed;height: 68px;z-index: 1">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">ZHEMU</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" info icon"></i>关于我</a>
+            <div class="right m-item m-mobile-hide item">
+                <div class="ui inverted transparent icon input">
+                    <input type="text" placeholder="Search..">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-moblie-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<br>
+<br>
+<br>
+
+<div class="ui m-opacity m-margin-top-max container">
+    <img src="../../static/images/404.jpg" th:src="@{/images/404.jpg}" alt="" class="ui rounded bordered fluid image">
+</div>
+<div class="m-margin-top-max" align="center">
+    <a href="#" th:href="@{/}">
+        <button type="button" class="ui teal button m-mobile-wide"><i class="home icon"></i>返回首页</button>
+    </a>
+</div>
+
+<br>
+<br>
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="five wide column">
+                <div class="ui  inverted link list">
+                    <h4 class="ui inverted header">个人联系方式</h4>
+                    <a href="#" class="item m-text-thin m-text-spaced ">Email:369039150@qq.com</a>
+                    <a href="#" class="item m-text-thin m-text-spaced ">QQ:369039150</a>
+                    <p class="m-padded-small m-text-spaced m-opacity-miniplus">这是我的个人博客，会分享一些我自己在学习过程中遇到的种种问题，希望可以帮助到来到这里的人</p>
+                </div>
+            </div>
+            <div class="three wide column ">
+                <div class="ui inverted link list">
+                    <img src="../../static/images/weixin.jpg" th:src="@{/images/weixin.jpg}" class="ui  centered bordered rounded image " alt="" style="width: 120px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <img src="../../static/images/qq.jpg" th:src="@{/images/qq.jpg}" class="ui  centered bordered rounded image " alt="" style="width: 120px">
+                </div>
+            </div>
+            <div class="five wide column">
+                <div class="ui inverted link list">
+                    <h4 class="ui inverted header">最新博客</h4>
+                    <a href="#" class="item">文章：</a>
+                    <a href="#" class="item">访问：</a>
+                    <a href="#" class="item">点赞：</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-miniplus">Copyright @ 2021-2022 Study by ZHEMU</p>
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</body>
+</html>
