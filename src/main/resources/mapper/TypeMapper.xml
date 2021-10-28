@@ -1,0 +1,24 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzc.blog.mapper.TypeMapper">
+    <select id="getType" parameterType="long" resultType="Type">
+        select name,id from t_type where id=#{id}
+    </select>
+
+    <update id="updateType" parameterType="Type">
+        update t_type set name=#{name} where id=#{id}
+    </update>
+
+    <insert id="saveType"  parameterType="Type">
+    insert into t_type(name) value(#{name})
+    </insert>
+
+    <delete id="deleteType" parameterType="long">
+        delete from t_type where id=#{id}
+    </delete>
+
+    <select id="getByTypename" parameterType="string" resultType="Type">
+        select id,name from t_type where name=#{name}
+    </select>
+</mapper>

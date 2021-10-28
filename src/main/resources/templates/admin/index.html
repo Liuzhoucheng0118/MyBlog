@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../../static/css/me.css">
 </head>
 <body>
-    <nav th:replace="admin/_fragments :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small "  style="position:fixed;height: 68px;z-index: 1">
+
+    <nav th:replace="admin/_fragments :: menu(0)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small "  style="position:fixed;height: 68px;z-index: 1">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">管理后台</h2>
@@ -18,12 +19,12 @@
                 <div class="right m-item m-mobile-hide menu">
                     <div class="ui dropdown item">
                         <div class="text">
-                            <img class="ui avatar image" src="../../static/images/avater.png">
+                            <img class="ui avatar image" src="../../static/images/avater.png" th:src="@{/images/avater.png}">
                             ZHEMU
                         </div>
                         <i class="dropdown icon"></i>
                         <div class=" menu">
-                            <a href="#" class=" item">注销</a>
+                            <a th:href="@{/admin/logout}" class=" item">注销</a>
                         </div>
                     </div>
                 </div>
@@ -35,69 +36,29 @@
     </nav>
 
     <div style="width: 100%;height: 68px"></div>
-<!--    二级导航-->
-        <div class="ui attached pointing m-shadow-small menu">
-            <div class="ui container">
-                <div class="right menu">
-                    <a th:href="@{/admin/typeInput}" class=" item">发布</a>
-                    <a th:href="@{/admin/types}" class=" active teal item">列表</a>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="m-container-small m-padded-tb-large animated zoomIn">
+        <div class="ui container one column black segment">
+
+            <div class="ui fluid link card">
+                <div class="ui center aligned">
+                    <h1 >Hi,</h1>
+                    <h2>ZHEMU,欢迎登录！</h2>
                 </div>
+                <img src="../../static/images/avater.png" th:src="@{/images/avater.png}">
             </div>
         </div>
-<!--    中间容器-->
-
-        <div class="m-container-small m-padded-tb-big animated bounceInUp">
-            <div class="ui message transition" th:unless="${#strings.isEmpty(message)}">
-            <i class="close icon"></i>
-            <div class="header">[[${message}]]</div>
-        </div>
-            <div class="ui container black m-shadow-small segment">
-
-                <table class="ui table">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>名称</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="type,stat:${pages.records}">
-                            <td th:text="${stat.count}"></td>
-                            <td th:text="${type.name}"></td>
-                            <td>
-                                <a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal button">编辑</a>
-                                <a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red  button">删除</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colspan="6">
-                                <div class="ui  pagination menu">
-                                    <a th:href="@{/admin/types(page=${pages.current-1})}" class="icon mini item" th:unless="${pages.current}==1">
-                                        上一页
-                                    </a>
-                                    <a th:href="@{/admin/types(page=${pages.current+1})}" class="icon mini item" th:unless="${pages.pages}==${pages.current}">
-                                        下一页
-                                    </a>
-                                </div>
-
-                            </th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    <br>
-
-
+    </div>
 
     <br>
     <br>
     <br>
 
-    <footer footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <footer  th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="five wide column">
@@ -151,14 +112,7 @@
     $('.ui.dropdown').dropdown({
         on: 'hover'
     });
-    $('.message .close')
-        .on('click', function() {
-            $(this)
-                .closest('.message')
-                .transition('fade')
-            ;
-        })
-    ;
+
 
 </script>
 </body>
