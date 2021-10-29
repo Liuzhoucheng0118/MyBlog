@@ -7,7 +7,6 @@ import com.lzc.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +23,9 @@ public class TypeController {
     //    跳转到新增分类页
     @RequestMapping("/typeInput")
     public String toTypeInput() {
-        return "/admin/types-input";
+        return "admin/types-input";
     }
+
 
     //    分类查询分页
     @RequestMapping("/types")
@@ -38,7 +38,7 @@ public class TypeController {
     }
 
     //    根据id删除分类
-    @RequestMapping("/types/{id}/delect")
+    @RequestMapping("/types/{id}/delete")
     public String deleteType(@PathVariable Long id, RedirectAttributes attributes) {
         Integer lines = typeService.deleteType(id);
         if (lines == 1) {
@@ -51,11 +51,11 @@ public class TypeController {
 
     //    保存新的分类
     @PostMapping("/types")
-    public String saveType(Type type, RedirectAttributes attributes) {
+    public String savetag(Type type, RedirectAttributes attributes) {
 
-        Type typeFlag = typeService.getByTypename(type.getName());
+        Type tagFlag = typeService.getByTypename(type.getName());
 
-        if (typeFlag != null) {
+        if (tagFlag != null) {
             attributes.addFlashAttribute("message", "分类已经存在");
             return "redirect:/admin/typeInput";
         }
@@ -69,30 +69,30 @@ public class TypeController {
         return "redirect:/admin/types";
     }
 
-//    编辑分类
+//    跳转到编辑页面
     @RequestMapping("/types/{id}/input")
     public String editType(@PathVariable Long id, Model model){
         Type type = typeService.getType(id);
         model.addAttribute("type",type);
-        return "/admin/types-input";
+        return "admin/types-edit";
     }
 
+//    更新标签
     @PostMapping("/types/{id}")
-    public String updateType(Type type,@PathVariable Long id,RedirectAttributes attributes) {
+    public String updateType(Type type,@PathVariable Long id, Model model) {
 
-        System.out.println(type.toString());
         Type typeInfo = typeService.getType(id);
-
         if (typeInfo.getName().equals(type.getName())) {
-            attributes.addFlashAttribute("message", "分类未修改，无需操作");
-            return "redirect:/admin/typeInput";
+            model.addAttribute("message", "分类未修改，无需操作");
+            model.addAttribute("type",type);
+            return "admin/types-edit";
         }
 
         Integer lines = typeService.updateType(type);
         if (lines == 1) {
-            attributes.addFlashAttribute("message", "修改了一条分类");
+            model.addAttribute("message", "修改了一条分类");
         } else {
-            attributes.addFlashAttribute("message", "分类修改失败");
+            model.addAttribute("message", "分类修改失败");
         }
         return "redirect:/admin/types";
     }

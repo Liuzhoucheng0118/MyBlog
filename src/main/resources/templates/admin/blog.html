@@ -39,15 +39,21 @@
         <div class="ui attached pointing menu">
             <div class="ui container">
                 <div class="right menu">
-                    <a href="#" class="item">发布</a>
-                    <a href="#" class="teal active item">列表</a>
+                    <a href="#" th:href="@{/admin/toBlogs}" class="item">发布</a>
+                    <a href="#" th:href="@{/admin/toBlogInput}" class="teal active item">列表</a>
                 </div>
             </div>
         </div>
 <!--    中间容器-->
 
         <div class="m-container-small m-padded-tb-big animated zoomIn">
-            <div class="ui container">
+            <div class="ui compact container">
+                <div class="m-container-small m-padded-tb-big animated bounceInUp">
+                    <div class="ui message transition" th:unless="${#strings.isEmpty(message)}">
+                        <i class="close icon"></i>
+                        <div class="header">[[${message}]]</div>
+                    </div>
+                </div>
                 <form action="#" method="post" class="ui segment form">
                     <div class="inline fields">
                         <div class="field">
@@ -90,12 +96,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>刻意练习</td>
-                        <td>认知升级</td>
-                        <td>是</td>
-                        <td>2021-10-26</td>
+                    <tr th:each="blog,stat:${pages.records}">
+                        <td th:text="${stat.count}"></td>
+                        <td th:text="${blog.title}"></td>
+                        <td th:text="${blog.type.name}"></td>
+                        <td th:text="${blog.recommend}?'是':'否'"></td>
+                        <td th:text="${blog.updateTime}"></td>
                         <td>
                             <a href="#" class="ui mini teal button">编辑</a>
                             <a href="#" class="ui mini red  button">删除</a>
@@ -106,10 +112,10 @@
                         <tr>
                             <th colspan="6">
                                 <div class="ui  pagination menu">
-                                    <a class="icon mini item">
+                                    <a th:href="@{/admin/blogs(page=${pages.current-1})}" class="icon mini item" th:unless="${pages.current}==1">
                                         上一页
                                     </a>
-                                    <a class="icon mini item">
+                                    <a th:href="@{/admin/blogs(page=${pages.current+1})}" class="icon mini item" th:unless="${pages.current}==1">
                                         下一页
                                     </a>
                                 </div>

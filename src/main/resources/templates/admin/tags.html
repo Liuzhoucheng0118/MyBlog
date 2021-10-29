@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../static/css/me.css">
 </head>
 <body>
-    <nav th:replace="admin/_fragments :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small "  style="position:fixed;height: 68px;z-index: 1">
+    <nav th:replace="admin/_fragments :: menu(3)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small "  style="position:fixed;height: 68px;z-index: 1">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">管理后台</h2>
@@ -39,8 +39,8 @@
         <div class="ui attached pointing m-shadow-small menu">
             <div class="ui container">
                 <div class="right menu">
-                    <a th:href="@{/admin/typeInput}" class=" item">发布</a>
-                    <a th:href="@{/admin/types}" class=" active teal item">列表</a>
+                    <a th:href="@{/admin/tagInput}" class=" item">发布</a>
+                    <a th:href="@{/admin/tags}" class=" active teal item">列表</a>
                 </div>
             </div>
         </div>
@@ -62,23 +62,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="type,stat:${pages.records}">
+                        <tr th:each="tag,stat:${pages.records}">
                             <td th:text="${stat.count}"></td>
-                            <td th:text="${type.name}"></td>
+                            <td th:text="${tag.name}"></td>
                             <td>
-                                <a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal button">编辑</a>
-                                <a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red  button">删除</a>
+                                <a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui mini teal button">编辑</a>
+                                <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red  button">删除</a>
                             </td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <th colspan="6">
-                                <div class="ui  pagination menu">
-                                    <a th:href="@{/admin/types(page=${pages.current-1})}" class="icon mini item" th:unless="${pages.current}==1">
+                                <div class="ui pagination menu" th:unless="${pages.pages}==1">
+                                    <a th:href="@{/admin/tags(page=${pages.current-1})}" class="icon mini item" th:unless="${pages.current}==1">
                                         上一页
                                     </a>
-                                    <a th:href="@{/admin/types(page=${pages.current+1})}" class="icon mini item" th:unless="${pages.pages}==${pages.current}">
+                                    <a th:href="@{/admin/tags(page=${pages.current+1})}" class="icon mini item" th:unless="${pages.pages}==${pages.current}">
                                         下一页
                                     </a>
                                 </div>

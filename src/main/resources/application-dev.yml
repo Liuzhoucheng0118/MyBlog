@@ -13,7 +13,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   thymeleaf:
-    cache: false
+    thymeleaf:
+      mode: HTML
+      encoding: utf-8
+      cache: false
+      prefix: classpath:/templates/
 
   mvc:
     hiddenmethod: #resful

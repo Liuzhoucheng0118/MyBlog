@@ -1,0 +1,64 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzc.blog.mapper.BlogMapper">
+
+
+    <resultMap id="BlogMap" type="Blog">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="firstPicture" column="first_picture"/>
+        <result property="flag" column="flag"/>
+        <result property="appreciation" column="appreciation"/>
+        <result property="shareStatement" column="share_statement"/>
+        <result property="commentabled" column="commentabled"/>
+        <result property="published" column="published"/>
+        <result property="recommend" column="recommend"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <association property="user" javaType="User">
+            <id property="username" column="username"/>
+            <result property="nickname" column="nickname"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="email" column="email"/>
+            <result property="type" column="type"/>
+            <result property="createTime" column="create_time"/>
+            <result property="username" column="update_time"/>
+        </association>
+        <association property="type" javaType="Type">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+        </association>
+    </resultMap>
+
+
+<!--查询全部-->
+    <select id="selectBlogs" parameterType="Blog" resultMap="BlogMap">
+        <include refid="selectAll"></include>
+    </select>
+
+<!--条件查询-->
+    <select id="selectByCondition" resultMap="BlogMap">
+
+        <include refid="selectAll"></include>
+        <where>
+            <if test="bc.title != null">
+                AND b.title like concat('%',#{bc.title},'%')
+            </if>
+            <if test="bc.type != null">
+                AND t.type =#{bc.type}
+            </if>
+        </where>
+    </select>
+
+
+
+    <sql id="selectAll">
+        select * from t_blog b
+        LEFT JOIN t_type t on b.type_id=t.id
+        LEFT JOIN t_user u on b.user_id=u.id
+    </sql>
+
+</mapper>

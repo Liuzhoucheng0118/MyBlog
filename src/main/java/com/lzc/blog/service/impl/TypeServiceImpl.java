@@ -1,11 +1,11 @@
 package com.lzc.blog.service.impl;
 
+
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lzc.blog.mapper.TypeMapper;
 import com.lzc.blog.pojo.Type;
 import com.lzc.blog.service.TypeService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,18 +29,19 @@ public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements Ty
     }
 
     @Override
-    public Integer updateType(Type type) {
-        Type selectType = typeMapper.selectById(type.getId());
-        if(selectType==null){
-            log.error("没有该分类:{}",type.getName());
+    public Integer updateType(Type tag) {
+        System.out.println(tag.getId());
+        Type selecttag = typeMapper.getType(tag.getId());
+        if(selecttag==null){
+            log.error("没有该分类:{}",tag.getName());
             return -1;
         }
-        return  typeMapper.updateType(type);
+        return  typeMapper.updateType(tag);
     }
 
     @Override
     public Integer deleteType(Long id) {
-        Type selectType = typeMapper.selectById(id);
+        Type selectType = typeMapper.getType(id);
         if(selectType==null){
             log.error("该分类已经不存在");
             return -1;

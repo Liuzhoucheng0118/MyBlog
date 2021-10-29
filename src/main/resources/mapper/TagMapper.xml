@@ -1,0 +1,24 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzc.blog.mapper.TagMapper">
+    <select id="getTag" parameterType="long" resultType="Tag">
+        select name,id from t_tag where id=#{id}
+    </select>
+
+    <update id="updateTag" parameterType="Tag">
+        update t_tag set name=#{name} where id=#{id}
+    </update>
+
+    <insert id="saveTag"  parameterType="Tag">
+    insert into t_tag (name) value(#{name})
+    </insert>
+
+    <delete id="deleteTag" parameterType="long">
+        delete from t_tag where id=#{id}
+    </delete>
+
+    <select id="getByTagname" parameterType="string" resultType="Tag">
+        select id,name from t_tag where name=#{name}
+    </select>
+</mapper>
