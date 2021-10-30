@@ -68,13 +68,13 @@
                     <h2 class="ui  center aligned header" th:text="${blog.title}">关于刻意练习的清单</h2>
                     <br>
 <!--                    文章内容-->
-                    <div id="content" th:text="${blog.content}" class="typo js-toc-content typo-selection m-padded-lr-responsive m-padded-tb-tb">
+                    <div id="content" th:utext="${blog.content}" class="typo js-toc-content typo-selection m-padded-lr-responsive m-padded-tb-tb">
 
 
                     </div>
 <!--                    标签-->
                     <div class="m-padded-lr m-margin-top">
-                        <div class="ui basic teal label" >方法论</div>
+                        <div class="ui orange label" th:each="tag:${tags}" th:text="${tag.name}">方法论</div>
                     </div>
 <!--                    赞赏-->
                     <div class="ui center aligned basic segment">
@@ -100,14 +100,14 @@
                     <div class="ui middle aligned grid">
                         <div class="eleven wide column">
                             <ul class="list">
-                                <li>作者：ZHEMU</li>
-                                <li>发布时间：2021年10月26日 10:45:41</li>
+                                <li>作者：<span th:text="${blog.user.nickname}">ZHEMU</li>
+                                <li>发布时间：<span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd HH:mm')}"></span></li>
                                 <li>版权声明：自由转载-非商用-非衍生-保持署名</li>
                                 <li>公众号转载：请在文末添加作者的微信二维码</li>
                             </ul>
                         </div>
                         <div class="five wide column">
-                            <img src="../static/images/weixin.jpg" alt="" class="ui right floated rounded bordered image" style="width: 100px">
+                            <img src="../static/images/weixin.jpg" alt="" th:src="@{/images/weixin.jpg}" class="ui right floated rounded bordered image" style="width: 100px">
                         </div>
                     </div>
                 </div>
@@ -282,7 +282,7 @@
 <script src="../static/lib/tocbot/tocbot.min.js"></script>
 <script src="../static/lib/waypoints/jquery.waypoints.js"></script>
     <!--/*/</th:block>/*/-->
-    <script>
+    <script th:inline="">
     $('.meau.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
     })
