@@ -34,40 +34,55 @@
     <div class="m-container-small m-padded-tb-large animated zoomIn">
         <div class="ui container">
             <div class="ui stackable grid">
-                <div class="eleven wide column">
-                    <div class="ui segment">
-                        <img src="../static/images/Konachan-329266-Large.png" class="ui rounded image" style="width: 800px">
+                <div class="ui fluid card">
+                    <div class="ui slide masked image">
+                        <img src="../static/images/1.png" class="visible content">
                     </div>
-                </div>
-                <div class="five wide column">
-                    <div class="ui top attached segment">
-                        <div class="ui header">关于我</div>
+                    <div class="content">
+                        <p class="header">关于我</p>
+                        <div class="meta">
+                            <span class="date">
+                                <p class="m-block">ZHEMU,一个刚刚开始进入编程世界的小菜鸟,希望在后续的时间能提高自己的技术水平</p>
+                                <p class="m-block">喜欢看动漫，对二次元研究颇深，最近在追国王排名</p>
+                            </span>
+                        </div>
                     </div>
-                    <div class="ui attached segment">
-                        <p class="m-text">ZHEMU,一个刚刚开始进入编程世界的小菜鸟,希望在后续的时间能提高自己的技术水平</p>
-                        <p class="m-text">喜欢看动漫，对二次元研究颇深，最近在追国王排名</p>
+                    <div class="extra content">
+
+                            <div class="ui teal progress" data-percent="55" id="example2">
+                                <div class="bar"></div>
+                                <div class=" label"> Mybatis</div>
+                            </div>
+                            <div class="ui teal progress" data-percent="74" id="example1">
+                                <div class="bar"></div>
+                                <div class=" left float label">Java</div>
+                            </div>
+                            <div class="ui teal progress" data-percent="74" id="example3">
+                                <div class="bar"></div>
+                                <div class="label">Spring</div>
+                            </div>
+                            <div class="ui teal progress" data-percent="50" id="example4">
+                                <div class="bar"></div>
+                                <div class="label">Linux</div>
+                            </div>
+
                     </div>
-                    <div class="ui attached segment ">
-                        <div class="ui orange label m-margin-top-small">动漫</div>
-                        <div class="ui orange label m-margin-top-small">编程</div>
-                        <div class="ui orange label m-margin-top-small">看小说</div>
-                        <div class="ui orange label m-margin-top-small">运动</div>
-                        <div class="ui orange label m-margin-top-small">睡觉</div>
-                    </div>
-                    <div class="ui  bottom attached segment">
-                        <a href="#" class="ui github circular icon button"><i class="github icon"></i></a>
-                        <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
-                        <a href="#" class="ui qq circular icon button" data-content="369039150" data-position="bottom center"><i class="qq icon"></i></a>
-                    </div>
-                    <div class="ui wechat-qr flowing popup top left transition hidden">
-                        <img src="../static/images/weixin.jpg" class="ui rounded image" style="width: 100px;">
-                    </div>
-                    <div class="ui qq-qr flowing popup top left transition hidden">
-                        <img src="../static/images/qq.jpg" class="ui rounded image" style="width: 100px;">
+                    <div class="extra content">
+                        <div class="center aligned">
+                            <a href="#" class="ui github circular icon button"><i class="github icon"></i></a>
+                            <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                            <a href="#" class="ui qq circular icon button" data-content="369039150" data-position="bottom center"><i class="qq icon"></i></a>
+                        </div>
+                        <div class="ui wechat-qr flowing popup top left transition hidden">
+                            <img src="../static/images/weixin.jpg" class="ui rounded image" style="width: 100px;">
+                        </div>
+                        <div class="ui qq-qr flowing popup top left transition hidden">
+                            <img src="../static/images/qq.jpg" class="ui rounded image" style="width: 100px;">
+                        </div>
+                        </div>
                     </div>
             </div>
         </div>
-    </div>
     </div>
     <br>
     <br>
@@ -125,14 +140,24 @@
     $('.wechat').popup({
         popup:$('.wechat-qr'),
         on: 'hover',
-        position: 'bottom center'
+        position: 'top center'
     })
 
     $('.qq').popup({
         popup:$('.qq-qr'),
         on: 'hover',
-        position: 'bottom center'
+        position: 'top center'
     })
+
+
+    $('#example1').progress();
+    $('#example2').progress();
+    $('#example3').progress();
+    $('#example4').progress();
+
+
+
+
 </script>
 </body>
 </html>
