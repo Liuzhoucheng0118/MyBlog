@@ -167,6 +167,10 @@ body{
     right: 0 !important;
 }
 
+.m-left-bottom{
+    bottom: 10px !important;
+    left: 0 !important;
+}
 
 .m-moblie-show{
     display: none!important;

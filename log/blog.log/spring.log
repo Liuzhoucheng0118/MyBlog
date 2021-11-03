@@ -1,0 +1,14 @@
+2021-10-27 15:29:18.911  INFO 9984 --- [restartedMain] com.MyBlogApplication                    : Starting MyBlogApplication using Java 1.8.0_65 on LAPTOP-MK07B4HD with PID 9984 (C:\Git-Space\MyBlog\target\classes started by Liu in C:\Git-Space\MyBlog)
+2021-10-27 15:29:18.917  INFO 9984 --- [restartedMain] com.MyBlogApplication                    : No active profile set, falling back to default profiles: default
+2021-10-27 15:29:19.039  INFO 9984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-27 15:29:19.041  INFO 9984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-27 15:29:21.882  INFO 9984 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-27 15:29:21.896  INFO 9984 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 15:29:21.896  INFO 9984 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-27 15:29:22.017  INFO 9984 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-27 15:29:22.018  INFO 9984 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2972 ms
+2021-10-27 15:29:22.293  INFO 9984 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-27 15:29:22.405  INFO 9984 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-10-27 15:29:23.717  INFO 9984 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-27 15:29:23.800  INFO 9984 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-27 15:29:23.818  INFO 9984 --- [restartedMain] com.MyBlogApplication                    : Started MyBlogApplication in 5.848 seconds (JVM running for 7.824)

@@ -1,7 +1,7 @@
 #端口、数据源、thymeleaf、mybatis、表单转化
 
 server:
-  port: 8088
+  port: 8080
 
 
 spring:
@@ -25,16 +25,17 @@ spring:
         enabled: true
     throw-exception-if-no-handler-found: true
 
-  jackson:
-    date-format: yyyy-MM-dd
-    time-zone: GMT+8
-    serialization:
-      write-dates-as-timestamps: false
+
+#  jackson:
+#    date-format: yyyy-MM-dd
+#    time-zone: GMT+8
+#    serialization:
+#      write-dates-as-timestamps: false
 
 
 mybatis-plus:
-  mapper-locations: classpath:/mybatis/mapper/*.xml
-  type-aliases-package: com.lzc.*.pojo
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.lzc.blog.pojo
   configuration:
     map-underscore-to-camel-case: true
 
@@ -43,5 +44,5 @@ logging:
     root: warn
     com.lzc: info
   file:
-    path: log/blog-pro.log
+    path: log/blog-dev.log
 

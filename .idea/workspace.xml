@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd4d109c-3b7d-499b-95e3-7f82f9b6ef57" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8cced94d-1783-4af8-b5ed-e545316579c2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8cced94d-1783-4af8-b5ed-e545316579c2/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyBlog.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-10-27.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-10-28.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-10-29.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-10-30.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-10-31.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-11-01.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log.2021-11-02.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/blog.log/spring.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/lib/aplayer/APlayer.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/lib/aplayer/APlayer.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/lib/editormd/editormd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mp3/BOY.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mp3/Oz.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mp3/gwed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mp3/gwop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mp3/lyqb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mp3/歌よ.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-pro.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-pro.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/me.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/editormd/editormd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blog-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blog-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blog-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blog-input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="myblog: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="myblog: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="t_friend: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="mapperxml" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files (x86)/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="C:\Program Files (x86)\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1zzNeYmKWPErTKlucRftohEr7zD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.16992188" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vcs.patch.to.clipboard" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\images" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\editormd" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\mp3" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\Aplayer" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lzc.blog.service.impl" />
+      <recent name="com.lzc.blog.service" />
+      <recent name="com.lzc.blog.mapper" />
+      <recent name="com.lzc.blog.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\images" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\templates" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyBlogApplication">
+    <configuration name="MyTest.tagtest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="tagtest2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.typetest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="typetest1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.typetest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="typetest2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test11.sada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test11" />
+      <option name="METHOD_NAME" value="sada" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MyBlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.MyBlogApplication" />
+        <item itemvalue="JUnit.Test11.sada" />
+        <item itemvalue="JUnit.MyTest.tagtest2" />
+        <item itemvalue="JUnit.MyTest.typetest2" />
+        <item itemvalue="JUnit.MyTest.typetest1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd4d109c-3b7d-499b-95e3-7f82f9b6ef57" name="Default Changelist" comment="" />
+      <created>1635147051426</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635147051426</updated>
+      <workItem from="1635147053129" duration="22000" />
+      <workItem from="1635147102976" duration="22005000" />
+      <workItem from="1635173946371" duration="17000" />
+      <workItem from="1635213354264" duration="117000" />
+      <workItem from="1635213487105" duration="17291000" />
+      <workItem from="1635235807204" duration="22311000" />
+      <workItem from="1635297275004" duration="9949000" />
+      <workItem from="1635310003683" duration="12254000" />
+      <workItem from="1635323567892" duration="1113000" />
+      <workItem from="1635324715028" duration="11550000" />
+      <workItem from="1635404573059" duration="11056000" />
+      <workItem from="1635415766518" duration="4234000" />
+      <workItem from="1635420026446" duration="14486000" />
+      <workItem from="1635472406944" duration="44423000" />
+      <workItem from="1635559011286" duration="13543000" />
+      <workItem from="1635575787699" duration="102000" />
+      <workItem from="1635576723433" duration="18700000" />
+      <workItem from="1635652464040" duration="32313000" />
+      <workItem from="1635692451904" duration="822000" />
+      <workItem from="1635733627252" duration="14157000" />
+      <workItem from="1635758744783" duration="9875000" />
+      <workItem from="1635845945644" duration="1828000" />
+      <workItem from="1635849876127" duration="13131000" />
+      <workItem from="1635905067453" duration="10992000" />
+      <workItem from="1635919834552" duration="980000" />
+      <workItem from="1635923138662" duration="213000" />
+      <workItem from="1635924739221" duration="59000" />
+      <workItem from="1635934668724" duration="4826000" />
+      <workItem from="1635941457026" duration="178000" />
+      <workItem from="1635941721936" duration="4767000" />
+      <workItem from="1635946534060" duration="3357000" />
+    </task>
+    <task id="LOCAL-00001" summary="2021年10月26日 20:58:43">
+      <created>1635253249129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635253249129</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2021年10月26日 23:23:23">
+      <created>1635261820926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635261820926</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2021年10月27日 21:15:08&#10;完成了实体类和前端thymeleaf的静态资源导入">
+      <created>1635340601255</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635340601255</updated>
+    </task>
+    <task id="LOCAL-00004" summary="2021年10月28日 23:20:54&#10;增加了分类的相关CURD">
+      <created>1635434483030</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635434483030</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2021年10月29日 16:19:08&#10;新增tag,和修复了相同提交无法跳转的问题">
+      <created>1635495591491</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635495591491</updated>
+    </task>
+    <task id="LOCAL-00006" summary="2021年10月30日 00:04:40&#10;blog的相关功能差不多完成，存在一些bug，明天在修复">
+      <created>1635523516714</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635523516714</updated>
+    </task>
+    <task id="LOCAL-00007" summary="2021年10月30日 16:51:04&#10;后端基本完成，之后可能增加友链和图片控制">
+      <created>1635583909720</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635583909720</updated>
+    </task>
+    <task id="LOCAL-00008" summary="2021年10月31日 23:12:59&#10;完成了前端大大多数了&#10;基本上修复了tag显示&#10;补上了聊天记录等功能&#10;修改了部分样式">
+      <created>1635693249565</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635693249565</updated>
+    </task>
+    <task id="LOCAL-00009" summary="2021年11月3日 15:06:54&#10;完成了，后续功能会有所增加">
+      <created>1635923307165</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635923307165</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2021年10月26日 20:58:43" />
+    <MESSAGE value="2021年10月26日 23:23:23" />
+    <MESSAGE value="2021年10月27日 21:15:08&#10;完成了实体类和前端thymeleaf的静态资源导入" />
+    <MESSAGE value="2021年10月28日 23:20:54&#10;增加了分类的相关CURD" />
+    <MESSAGE value="2021年10月29日 16:19:08&#10;新增tag,和修复了相同提交无法跳转的问题" />
+    <MESSAGE value="2021年10月30日 00:04:40&#10;blog的相关功能差不多完成，存在一些bug，明天在修复" />
+    <MESSAGE value="2021年10月30日 16:51:04&#10;后端基本完成，之后可能增加友链和图片控制" />
+    <MESSAGE value="2021年10月30日 23:46:43&#10;前端完成了首页和详情页" />
+    <MESSAGE value="2021年10月31日 23:12:59&#10;完成了前端大大多数了&#10;基本上修复了tag显示&#10;补上了聊天记录等功能&#10;修改了部分样式" />
+    <MESSAGE value="2021年11月3日 15:06:54&#10;完成了，后续功能会有所增加" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021年11月3日 15:06:54&#10;完成了，后续功能会有所增加" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="73" key="#HTTP_Proxy" timestamp="1635573302748">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="73" key="#HTTP_Proxy/0.0.1536.824@0.0.1536.824" timestamp="1635573302748" />
+    <state x="361" y="74" key="#Project_Structure" timestamp="1635913502017">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1635913502017" />
+    <state x="880" y="178" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1635853002998">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="880" y="178" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1635853002998" />
+    <state x="343" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635338229907">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="343" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1635338229907" />
+    <state x="525" y="221" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1635938174294">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="525" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1635938174294" />
+    <state x="956" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1635774873587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="956" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1635774873587" />
+    <state x="820" y="350" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1635323037584">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="820" y="350" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1635323037584" />
+    <state x="228" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1635498963245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="228" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1635498963245" />
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1635946410129">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1635946410129" />
+    <state x="832" y="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1635318991960">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="832" y="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1635318991960" />
+    <state x="229" y="0" key="CommitChangelistDialog2" timestamp="1635923305282">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="229" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1635923305282" />
+    <state x="70" y="18" width="1350" height="638" key="DiffContextDialog" timestamp="1635585138150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="70" y="18" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1635585138150" />
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1635576779061">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1635576779061" />
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.1.bottom" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.1.center" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.1.left" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="203" key="GridCell.Tab.1.right" timestamp="1635950087269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1635950087269" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1635691763141">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1635691763141" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1635691763141">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1635691763141" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1635691763141">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1635691763141" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1635691763141">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1635691763141" />
+    <state x="272" y="57" key="SettingsEditor" timestamp="1635576785119">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1635576785119" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1635923325503">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1635923325503" />
+    <state x="851" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1635950107102">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="851" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1635950107102" />
+    <state x="390" y="1" width="755" height="822" key="find.popup" timestamp="1635934720876">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="390" y="1" width="755" height="822" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1635934720876" />
+    <state x="756" y="217" key="run.anything.popup" timestamp="1635942208036">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="756" y="217" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1635942208036" />
+    <state x="806" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1635759462544">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="806" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1635759462544" />
+  </component>
+</project>
