@@ -21,4 +21,16 @@
     <select id="getByTypename" parameterType="string" resultType="Type">
         select id,name from t_type where name=#{name}
     </select>
+
+    <resultMap id="Type" type="Type">
+        <id column="t_id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="blogNumber" property="blogNumber"/>
+    </resultMap>
+
+    <select id="getTypeBlogs" resultMap="Type">
+        select t_type.id as t_id,t_type.name,count(t_blog.id) as blogNumber from t_type LEFT JOIN t_blog on t_blog.type_id=t_type.id
+        GROUP BY t_type.id
+    </select>
+
 </mapper>

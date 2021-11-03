@@ -3,3 +3,5 @@
 spring:
   profiles:
     active: dev
+
+comment.avatar: https://semantic-ui.com/images/avatar2/large/elyse.png

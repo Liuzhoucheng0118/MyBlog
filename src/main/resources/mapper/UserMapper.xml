@@ -5,4 +5,8 @@
        <select id="cheackUser" parameterType="String" resultType="User">
                select * from t_user where username=#{username}
            </select>
+
+        <select id="getUserById" parameterType="long" resultType="User">
+        select id,nickname,username,email,avatar from t_user where id = #{id}
+        </select>
 </mapper>

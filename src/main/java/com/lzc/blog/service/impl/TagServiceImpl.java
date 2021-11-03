@@ -6,10 +6,13 @@ import com.lzc.blog.mapper.TagMapper;
 import com.lzc.blog.pojo.Tag;
 import com.lzc.blog.service.TagService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 @Transactional
@@ -53,6 +56,19 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     public Tag getByTagname(String name) {
         return tagMapper.getByTagname(name);
     }
+
+    @Override
+    public List<Tag> getTagsByTagIds(@Param("ids") String id){
+        id="("+id+")";
+        return tagMapper.getTagsByTagIds(id);
+    }
+
+    @Override
+    public List<Tag> getAllTags() {
+        return tagMapper.getAllTags();
+    }
+
+
 }
 
 

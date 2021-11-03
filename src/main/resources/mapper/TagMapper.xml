@@ -21,4 +21,12 @@
     <select id="getByTagname" parameterType="string" resultType="Tag">
         select id,name from t_tag where name=#{name}
     </select>
+
+    <select id="getTagsByTagIds" resultType="Tag">
+        select * from t_tag where t_tag.id in ${ids}
+    </select>
+
+    <select id="getAllTags" resultType="Tag">
+        select * from t_tag
+    </select>
 </mapper>

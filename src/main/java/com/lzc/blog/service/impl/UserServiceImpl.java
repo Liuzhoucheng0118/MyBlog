@@ -17,4 +17,9 @@ public class UserServiceImpl implements UserService {
     public User cheackUser(String username) {
         return userMapper.cheackUser(username);
     }
+
+    @Override
+    public User getUserById(Long id) {
+        return userMapper.getUserById(id);
+    }
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 @Transactional
@@ -52,6 +53,11 @@ public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements Ty
     @Override
     public Type getByTypename(String name) {
         return typeMapper.getByTypename(name);
+    }
+
+    @Override
+    public List<Type> getTypeBlogs() {
+        return typeMapper.getTypeBlogs();
     }
 }
 

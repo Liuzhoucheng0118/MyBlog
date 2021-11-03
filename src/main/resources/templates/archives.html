@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
 </head>
 <body>
-    <nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"  style="position:fixed;height: 68px;z-index: 1" >
+    <nav th:replace="_fragments :: menu(-1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"  style="position:fixed;height: 68px;z-index: 1" >
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">ZHEMU</h2>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" home icon"></i>首页</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" idea icon"></i>分类</a>
-                <a href="#" class="active m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+                <a href="#" class=" m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" clone icon"></i>归档</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" info icon"></i>关于我</a>
             <div class="right m-item m-mobile-hide item">
@@ -39,25 +39,30 @@
         <div id="waypoint" class="m-container-small m-padded-tb-big animated zoomIn">
             <div class="ui container">
 <!--                header-->
-                <div class="ui top attached padded segment">
-                    <div class="ui middle aligned two column grid">
-                        <div class="column">
-                            <h3 class="ui teal header">博客</h3>
-                        </div>
-                        <div class="right aligned column" style="font-weight: bold">
-                            共 <h2 class="ui orange header m-inline-block">14</h2> 篇
+
+                <div  th:each="year:${yearMap}">
+                    <br>
+                    <br>
+                    <h2 class="ui header"><span th:text="${year.key}">2021</span> <div class="sub header">一个小菜鸟的学习过程</div>
+                    </h2>
+                    <div class="ui divider"></div>
+                    <div class="ui four link black m-margin-top cards">
+                        <div class="ui black card" th:each="blog:${year.value}" >
+                            <a class="ui card" th:href="@{/read/{id}(id=${blog.id})}">
+                                <div class="content">
+                                    <div class="center aligned header" th:text="${blog.title}">Jenny Hess</div>
+                                    <div class="center aligned description" >
+                                        <p th:text="${blog.description}">Jenny是一名在该新学校学习媒体管理的在校生。</p>
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <div class="center aligned author">
+                                        <p th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}"></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <h2 class="ui center inverted aligned header">2021</h2>
-                <div class="ui fluid vertical menu">
-                    <a href="#" target="_blank" class="item " style="font-weight: 500">
-                        <span>
-                             <i class="mini teal circle icon " style="padding-right: 2em"></i>关于刻意练习的事
-                            <div class="ui teal basic left pointing label m-padded-tb-mini">9月17日</div>
-                        </span>
-                        <div class="ui orange basic label ">原创</div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -68,7 +73,11 @@
     </div>
     <br>
     <br>
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer  th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="five wide column">

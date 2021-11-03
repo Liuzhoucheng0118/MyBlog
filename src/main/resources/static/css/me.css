@@ -1,9 +1,7 @@
 body{
     font-family: 微软雅黑;
-    /*background: url("../images/Konachan-329266-Large.png");*/
-    background-size:100%;
-    /*background-repeat: no-repeat;*/
-    background-attachment: fixed;
+    /*background: url("../images/bg.png");*/
+
 }
 
 .m-bg-class_cover {
@@ -96,6 +94,9 @@ body{
     margin-bottom: 0.5em!important;
 }
 
+.m-margin-lr-small{
+    margin-bottom: 0.5em!important;
+}
 
 /*text*/
 
@@ -139,7 +140,7 @@ body{
 
 /*shadow*/
 .m-shadow-small{
-    -webkit-box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2) !important;
+    -webkit-box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2) !important;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
 }
 

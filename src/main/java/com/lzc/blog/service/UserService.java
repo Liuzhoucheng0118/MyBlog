@@ -5,4 +5,6 @@ import com.lzc.blog.pojo.User;
 public interface UserService {
 
     public User cheackUser(String username);
+
+    public User getUserById(Long id);
 }

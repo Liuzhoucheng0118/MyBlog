@@ -5,10 +5,11 @@
 
 
     <resultMap id="BlogMap" type="Blog">
-        <id property="id" column="id"/>
+        <id property="id" column="b_id"/>
         <result property="title" column="title"/>
         <result property="content" column="content"/>
         <result property="firstPicture" column="first_picture"/>
+        <result property="views" column="views"/>
         <result property="flag" column="flag"/>
         <result property="appreciation" column="appreciation"/>
         <result property="shareStatement" column="share_statement"/>
@@ -17,48 +18,150 @@
         <result property="recommend" column="recommend"/>
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
+        <result property="description" column="description"/>
+        <result property="tagIds" column="tag_ids"/>
         <association property="user" javaType="User">
-            <id property="username" column="username"/>
+            <id property="id" column="u_id"/>
             <result property="nickname" column="nickname"/>
-            <result property="username" column="username"/>
-            <result property="password" column="password"/>
-            <result property="email" column="email"/>
-            <result property="type" column="type"/>
-            <result property="createTime" column="create_time"/>
-            <result property="username" column="update_time"/>
+            <result property="avatar" column="avatar"/>
         </association>
-        <association property="type" javaType="Type">
-            <id property="id" column="id"/>
+        <association property="type" javaType="Type" >
+            <id property="id" column="t_id"/>
             <result property="name" column="name"/>
         </association>
     </resultMap>
 
+
+
+    <sql id="selectAll">
+        select
+          b.id as b_id,b.title, b.content, b.first_picture,b.flag, b.views, b.appreciation, b.share_statement, b.commentabled,
+          b.published, b.recommend,b.create_time, b.update_time,b.user_id,b.description, b.tag_ids,
+          t.id as t_id,t.name,
+          u.id as u_id,u.nickname,u.avatar
+        from t_blog b
+        LEFT JOIN t_type t on b.type_id=t.id
+        LEFT JOIN t_user u on b.user_id=u.id
+    </sql>
 
 <!--查询全部-->
     <select id="selectBlogs" parameterType="Blog" resultMap="BlogMap">
         <include refid="selectAll"></include>
     </select>
 
-<!--条件查询-->
+<!--    根据id查询-->
+    <select id="getBlogById" parameterType="long" resultMap="BlogMap">
+        <include refid="selectAll"></include>
+        <where>
+            <if test="id !=null">
+                b.id=#{id}
+            </if>
+        </where>
+        order by b.id desc
+    </select>
+
+<!--多条件查询-->
     <select id="selectByCondition" resultMap="BlogMap">
 
         <include refid="selectAll"></include>
         <where>
-            <if test="bc.title != null">
-                AND b.title like concat('%',#{bc.title},'%')
+            <if test="bq.title != null">
+                AND b.title like concat('%',#{bq.title},'%')
             </if>
-            <if test="bc.type != null">
-                AND t.type =#{bc.type}
+            <if test="bq.typeId != null">
+                AND b.type_id = #{bq.typeId}
+            </if>
+        </where>
+        order by b.id desc
+    </select>
+
+<!--保存文章-->
+    <insert id="saveBlog" parameterType="Blog">
+        insert into t_blog(title, content, first_picture,
+          flag, views, appreciation, share_statement, commentabled,
+          published, recommend, create_time, update_time, type_id,
+          user_id,description, tag_ids)
+        VALUES (#{title},#{content},#{firstPicture},
+                #{flag},#{views},#{appreciation},#{shareStatement},
+                #{commentabled},#{published},#{recommend},#{createTime},
+                #{updateTime},#{type.id},#{user.id},#{description},#{tagIds})
+    </insert>
+
+<!--更新文章内容-->
+    <update id="updataBlog" parameterType="Blog">
+        update t_blog set
+        title=#{title},
+        content=#{content},
+        first_picture=#{firstPicture},
+        flag=#{flag},
+        appreciation=#{appreciation},
+        share_statement=#{shareStatement},
+        commentabled=#{commentabled},
+        published=#{published},
+        recommend=#{recommend},
+        update_time=#{updateTime},
+        type_id=#{type.id},
+        user_id=#{user.id},
+        description=#{description},
+        tag_ids=#{tagIds}
+        where id=#{id}
+    </update>
+
+
+    <delete id="deleteBlog" parameterType="long">
+        delete from t_blog where id=#{id}
+    </delete>
+
+
+    <select id="searchBlogs" parameterType="string" resultMap="BlogMap">
+        <include refid="selectAll"></include>
+        <where>
+            <if test="query!=null">
+            b.title like concat('%',#{query},'%')
+            or
+            b.content like concat('%',#{query},'%')
             </if>
         </where>
     </select>
 
 
+    <select id="getBlogConvert" parameterType="long" resultMap="BlogMap">
+        <include refid="selectAll"></include>
+        where b.id = #{id}
+    </select>
 
-    <sql id="selectAll">
-        select * from t_blog b
-        LEFT JOIN t_type t on b.type_id=t.id
-        LEFT JOIN t_user u on b.user_id=u.id
-    </sql>
+    <select id="blogIsEmpty" parameterType="long" resultType="long">
+        select id from t_blog
+        <where>
+            <if test="id!=null">
+              id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateViews">
+        update t_blog set views=#{views} where id=#{blogId}
+    </update>
+
+    <select id="selectTagBlogs" resultMap="BlogMap">
+        <include refid="selectAll"></include>
+        <where>
+            <if test="tagId!=null">
+             b.tag_ids like concat('%',#{tagId},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="getAllYear" resultType="string">
+        select date_format(t_blog.create_time,'%Y') as year from t_blog group by year order by year desc;
+    </select>
+
+    <select id="getBlogOfYear" resultType="Blog">
+        select id,title,create_time,description from t_blog  where date_format(t_blog.create_time,'%Y')=#{year}
+    </select>
+
+    <select id="BlogNumber" resultType="long">
+        select count(id) from t_blog;
+    </select>
 
 </mapper>

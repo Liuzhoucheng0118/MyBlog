@@ -1,5 +1,8 @@
 package com.lzc.blog.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +19,7 @@ import java.util.List;
 @ToString
 @TableName("t_comment")
 public class Comment {
+    @TableId(value = "id",type = IdType.AUTO)
     private Long id;
     private String nickname;
     private String email;
@@ -24,6 +28,9 @@ public class Comment {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
     private Blog blog;
+    private String adminComment;
+    @TableField(exist = false)
+    private String parentCommentName;
 
     private List<Comment> replayComments;
 

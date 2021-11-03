@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/css/me.css">
 </head>
 <body>
-    <nav th:replace="_fragments :: menu(5)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"  style="position:fixed;height: 68px;z-index: 1" >
+    <nav th:replace="_fragments :: menu(-1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"  style="position:fixed;height: 68px;z-index: 1" >
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">ZHEMU</h2>
@@ -31,12 +31,14 @@
     </nav>
     <div style="width: 100%;height: 68px"></div>
 <!--    中间容器-->
+    <br>
+    <br>
     <div class="m-container-small m-padded-tb-large animated zoomIn">
         <div class="ui container">
             <div class="ui stackable grid">
                 <div class="ui fluid card">
                     <div class="ui slide masked image">
-                        <img src="../static/images/1.png" class="visible content">
+                        <img src="../static/images/1.png" th:src="@{/images/1.png}" class="visible content">
                     </div>
                     <div class="content">
                         <p class="header">关于我</p>
@@ -49,35 +51,36 @@
                     </div>
                     <div class="extra content">
 
-                            <div class="ui teal progress" data-percent="55" id="example2">
+                            <div class="ui orange small progress" data-percent="55" id="example2">
                                 <div class="bar"></div>
                                 <div class=" label"> Mybatis</div>
                             </div>
-                            <div class="ui teal progress" data-percent="74" id="example1">
+                            <div class="ui orange small progress" data-percent="74" id="example1">
                                 <div class="bar"></div>
                                 <div class=" left float label">Java</div>
                             </div>
-                            <div class="ui teal progress" data-percent="74" id="example3">
+                            <div class="ui orange small progress" data-percent="74" id="example3">
                                 <div class="bar"></div>
                                 <div class="label">Spring</div>
                             </div>
-                            <div class="ui teal progress" data-percent="50" id="example4">
+
+                            <div class="ui orange small progress" data-percent="50" id="example4">
                                 <div class="bar"></div>
-                                <div class="label">Linux</div>
+                                <div class="label" >Linux</div>
                             </div>
 
                     </div>
                     <div class="extra content">
                         <div class="center aligned">
-                            <a href="#" class="ui github circular icon button"><i class="github icon"></i></a>
+                            <a href="#" th:href="@{https://github.com/Liuzhoucheng0118/MyBlog}" target="_blank" class="ui github circular icon button"><i class="github icon"></i></a>
                             <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
                             <a href="#" class="ui qq circular icon button" data-content="369039150" data-position="bottom center"><i class="qq icon"></i></a>
                         </div>
                         <div class="ui wechat-qr flowing popup top left transition hidden">
-                            <img src="../static/images/weixin.jpg" class="ui rounded image" style="width: 100px;">
+                            <img src="../static/images/weixin.jpg" th:src="@{/images/weixin.jpg}" class="ui rounded image" style="width: 100px;">
                         </div>
                         <div class="ui qq-qr flowing popup top left transition hidden">
-                            <img src="../static/images/qq.jpg" class="ui rounded image" style="width: 100px;">
+                            <img src="../static/images/qq.jpg" th:src="@{/images/qq.jpg}" class="ui rounded image" style="width: 100px;">
                         </div>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
     </div>
     <br>
     <br>
-        <footer class="ui inverted vertical segment m-padded-tb-massive">
+        <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
             <div class="ui center aligned container">
                 <div class="ui inverted divided stackable grid">
                     <div class="five wide column">

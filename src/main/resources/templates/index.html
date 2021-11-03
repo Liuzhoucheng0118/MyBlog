@@ -26,7 +26,7 @@
     </div>
 
 <!--    导航栏-->
-    <nav th:replace="_fragments :: menu(1)" id="nav" class="ui inverted attached segment m-shadow-small m-padded-tb-mini"  style="position:fixed;height: 68px;z-index: 1">
+    <nav th:replace="_fragments :: menu(-1)" id="nav" class="ui inverted attached segment m-shadow-small m-padded-tb-mini"  style="position:fixed;height: 68px;z-index: 1">
 
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
@@ -37,10 +37,12 @@
                 <a href="#" class="m-item item m-mobile-hide"><i class=" clone icon"></i>归档</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class=" info icon"></i>关于我</a>
                 <div class="right m-item m-mobile-hide item">
-                    <div class="ui inverted transparent icon input">
-                        <input type="text" placeholder="Search..">
-                        <i class="search link icon"></i>
-                    </div>
+                    <form name="search" th:action="@{/search}" method="post" target="_blank">
+                        <div class="ui inverted transparent icon input">
+                            <input type="text" name="query" placeholder="Search..">
+                            <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -60,152 +62,57 @@
 <!--            中间内容-->
             <div class=" twelve wide column">
 
-                <div class="ui fluid special  cards">
+                <div class="ui fluid special cards">
 <!--                    遮罩-->
-                    <div class="ui fluid m-shadow-small animated slideInLeft  card">
+                    <div th:each="blog:${pages.records}" class="ui fluid m-shadow-small animated slideInLeft  card">
                         <div class="blurring dimmable image">
 <!--                            遮罩后的内容-->
                                 <div class="ui dimmer">
                                     <div class="content">
                                         <div class="center">
-                                            <div class="ui inverted button">添加好友</div>
+                                            <a th:href="@{/read/{id}(id=${blog.id})}">
+                                                <div class="ui inverted button"> 阅读</div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
 <!--                            遮罩前的图片-->
                                 <div>
-                                    <img src="../static/images/Konachan-329266-Large.png" th:src="@{/images/Konachan-329266-Large.png}" class="ui rounded image m-shadow-small">
+                                    <img src="../static/images/Konachan-329266-Large.png" th:src="@{${blog.firstPicture}}" class="ui rounded image m-shadow-small">
                                     <div class="m-bg-class_cover" align="center" style="margin-bottom: 4%">
-                                        <h1 class=" blog-title" align="center">今天学习Redis</h1>
-                                        <p class="blog-description">学习redis是非常重要的，在高并发的系统中，使用非关系数据库可以鲜明的发现对性能的占用减少了,所以这是一个必需要掌握的一个技能</p>
+                                        <h1 class=" blog-title" align="center" th:text="${blog.title}">今天学习Redis</h1>
+                                        <p class="blog-description" th:text="${blog.description}">学习redis是非常重要的，在高并发的系统中，使用非关系数据库可以鲜明的发现对性能的占用减少了,所以这是一个必需要掌握的一个技能</p>
                                     </div>
                                 </div>
                             </div>
 <!--                        图片内容-->
                         <div class="content">
-                                <a class="header">Kristy</a>
+                                <a class="header" th:text="${blog.user.nickname}">Kristy</a>
                                 <div class="meta m-margin-top">
-                                    <i class="calendar icon"></i>2021-10-11
+                                    <i class="calendar icon"style="margin-right: 10px"></i>[[${#dates.format(blog.updateTime,'yyyy-MM-dd')}]]
                                 </div>
                                 <div class="description m-margin-top">
                                     一个无名的小菜鸟
                                 </div>
                             </div>
                         <div class="extra content">
-                            <span><i class="eye icon"></i> 75 </span>
-                            <span class="right floated"><a href="#" target="_blank" class="ui teal label column">认知升级</a></span>
+                            <i class="eye icon" ></i><span th:text="${blog.views}"> 75 </span>
+                            <span class="right floated"><a href="#" th:href="@{/types/{id}(id=${blog.type.id})}" target="_blank" class="ui teal label column" th:text="${blog.type.name}" >认知升级</a></span>
                         </div>
                     </div>
-                    <div class="ui fluid m-shadow-small animated slideInRight  card">
-                        <div class="blurring dimmable image">
-                            <!--                            遮罩后的内容-->
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button">添加好友</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--                            遮罩前的图片-->
-                            <div>
-                                <img src="../static/images/Konachan-329266-Large.png" th:src="@{/images/Konachan-329266-Large.png}" class="ui rounded image ">
-                                <div class="m-bg-class_cover" align="center">
-                                    <h1 class=" blog-title" align="center">今天学习Redis</h1>
-                                    <h2 class="blog-description">学习redis是非常重要的，在高并发的系统中，使用非关系数据库可以鲜明的发现对性能的占用减少了,所以这是一个必需要掌握的一个技能</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!--                        图片内容-->
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta m-margin-top">
-                                <i class="calendar icon"></i>2021-10-11
-                            </div>
-                            <div class="description m-margin-top">
-                                一个无名的小菜鸟
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span><i class="eye icon"></i> 75 </span>
-                            <span class="right floated"><a href="#" target="_blank" class="ui teal label column">认知升级</a></span>
-                        </div>
-                    </div>
-                    <div class="ui fluid m-shadow-small animated slideInLeft   card">
-                        <div class="blurring dimmable image">
-                            <!--                            遮罩后的内容-->
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button">添加好友</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--                            遮罩前的图片-->
-                            <div>
-                                <img src="../static/images/Konachan-329266-Large.png" th:src="@{/images/Konachan-329266-Large.png}" class="ui rounded image m-shadow-small">
-                                <div class="m-bg-class_cover" align="center" style="margin-bottom: 4%">
-                                    <h1 class=" blog-title" align="center">今天学习Redis</h1>
-                                    <p class="blog-description">学习redis是非常重要的，在高并发的系统中，使用非关系数据库可以鲜明的发现对性能的占用减少了,所以这是一个必需要掌握的一个技能</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--                        图片内容-->
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta m-margin-top">
-                                <i class="calendar icon"></i>2021-10-11
-                            </div>
-                            <div class="description m-margin-top">
-                                一个无名的小菜鸟
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span><i class="eye icon"></i> 75 </span>
-                            <span class="right floated"><a href="#" target="_blank" class="ui teal label column">认知升级</a></span>
-                        </div>
-                    </div>
-                    <div class="ui fluid m-shadow-small animated slideInRight  card">
-                        <div class="blurring dimmable image">
-                            <!--                            遮罩后的内容-->
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button">添加好友</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--                            遮罩前的图片-->
-                            <div>
-                                <img src="../static/images/Konachan-329266-Large.png" th:src="@{/images/Konachan-329266-Large.png}" class="ui rounded image ">
-                                <div class="m-bg-class_cover" align="center">
-                                    <h1 class=" blog-title" align="center">今天学习Redis</h1>
-                                    <h2 class="blog-description">学习redis是非常重要的，在高并发的系统中，使用非关系数据库可以鲜明的发现对性能的占用减少了,所以这是一个必需要掌握的一个技能</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!--                        图片内容-->
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta m-margin-top">
-                                <i class="calendar icon"></i>2021-10-11
-                            </div>
-                            <div class="description m-margin-top">
-                                一个无名的小菜鸟
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span><i class="eye icon"></i> 75 </span>
-                            <span class="right floated"><a href="#" target="_blank" class="ui teal label column">认知升级</a></span>
-                        </div>
-                    </div>
+
                 </div>
 <!--                上下页-->
                 <div class="ui middle aligned two column grid">
                     <div class="column m-margin-top">
-                        <a href="#" class="ui circular m-shadow-small black button">上一页</a>
+                        <a th:href="@{/blogs(page=${pages.current-1})}" class="ui circular m-shadow-small black button" th:unless="${pages.current}==1">
+                            上一页
+                        </a>
                     </div>
                     <div class="right aligned column m-margin-top">
-                        <a href="#" class="ui circular m-shadow-small black button">下一页</a>
+                        <a th:href="@{/blogs(page=${pages.current+1})}" class="ui circular m-shadow-small black button" th:unless="${pages.current}==${pages.pages}">
+                            下一页
+                        </a>
                     </div>
                 </div>
 

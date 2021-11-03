@@ -7,6 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>MyBlog</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -73,6 +74,21 @@
         </dependency>
 
         <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>0.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-gfm-tables</artifactId>
+            <version>0.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-heading-anchor</artifactId>
+            <version>0.18.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
@@ -86,14 +102,19 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory><!--所在的目录-->
+                <directory>src/main/resources</directory><!--所在的目录-->
                 <includes><!--包括目录下的.properties,.xml文件都会扫描到-->
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
+                    <include>**/*</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

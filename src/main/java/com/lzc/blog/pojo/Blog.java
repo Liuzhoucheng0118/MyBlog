@@ -1,5 +1,6 @@
 package com.lzc.blog.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,8 @@ import java.util.List;
 @ToString
 @TableName("t_blog")
 public class Blog {
-    private Integer id;
+    @TableId(value = "id",type = IdType.AUTO)
+    private Long id;
     private String title;
     private String content;
     private String firstPicture;
@@ -28,10 +30,12 @@ public class Blog {
     private boolean commentabled;
     private boolean published;
     private boolean recommend;
+    private String description;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updateTime;
+    private String tagIds;
 
     private Type type;
 
