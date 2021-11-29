@@ -1,9 +1,9 @@
 package com.lzc.blog.controller;
 
 
-
 import com.lzc.blog.pojo.Message;
 import com.lzc.blog.service.MessageService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
+@Api(value = "留言操作接口")
 @Controller
 public class MessageController {
 
@@ -25,20 +26,20 @@ public class MessageController {
     private String avatar;
 
     @GetMapping("/messages")
-    public String commentList(Model model){
+    public String commentList(Model model) {
         List<Message> messageList = messageService.list();
-        model.addAttribute("messages",messageList);
+        model.addAttribute("messages", messageList);
         return "friends :: messageList";
     }
 
     @PostMapping("/message")
-    public String saveMessage(Message message, HttpSession session){
-        if(session.getAttribute("user")!=null){
+    public String saveMessage(Message message, HttpSession session) {
+        if (session.getAttribute("user") != null) {
             message.setAdmincomment("true");
         }
-        if(session.getAttribute("user")!=null){
+        if (session.getAttribute("user") != null) {
             message.setAvatar("/images/avater.png");
-        }else{
+        } else {
             message.setAvatar(avatar);
         }
 

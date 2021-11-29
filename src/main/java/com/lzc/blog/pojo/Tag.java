@@ -17,7 +17,7 @@ import java.util.List;
 @ToString
 @TableName("t_tag")
 public class Tag {
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     private String name;
     @TableField(exist = false)

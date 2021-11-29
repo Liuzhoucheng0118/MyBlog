@@ -22,17 +22,17 @@ public interface BlogService {
 
     public Integer deleteBlog(Long id);
 
-    public IPage<Blog> searchBlogs(Page<?> page,String query);
+    public IPage<Blog> searchBlogs(Page<?> page, String query);
 
     public Blog getBlogConvert(Long id);
 
-    public Integer updateViews(Long blogId,Integer views);
+    public Integer updateViews(Long blogId, Integer views);
 
-    public IPage<Blog> selectTagBlogs(Page<?> page,Long tagId);
+    public IPage<Blog> selectTagBlogs(Page<?> page, Long tagId);
 
     public List<String> getAllYear();
 
-    public HashMap<String,List<Blog>> getBlogOfYear();
+    public HashMap<String, List<Blog>> getBlogOfYear();
 
     public Long BlogNumber();
 }

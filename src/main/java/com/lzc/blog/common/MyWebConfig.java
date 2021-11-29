@@ -8,6 +8,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 public class MyWebConfig implements WebMvcConfigurer {

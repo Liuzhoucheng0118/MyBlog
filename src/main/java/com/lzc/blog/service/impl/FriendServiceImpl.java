@@ -22,14 +22,15 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
 
     @Resource
     private FriendMapper friendMapper;
+
     @Override
-    public void updateShow(Integer id){
+    public void updateShow(Integer id) {
         friendMapper.updateShow(id);
     }
 
     @Override
-    public List<Friend> getShowFriend(){
-       return friendMapper.getShowFriend();
+    public List<Friend> getShowFriend() {
+        return friendMapper.getShowFriend();
     }
 
 }

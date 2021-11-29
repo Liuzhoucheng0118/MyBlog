@@ -7,5 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     public User cheackUser(String username);
+
     public User getUserById(Long id);
 }

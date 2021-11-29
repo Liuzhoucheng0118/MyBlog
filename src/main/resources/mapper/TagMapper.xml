@@ -10,8 +10,8 @@
         update t_tag set name=#{name} where id=#{id}
     </update>
 
-    <insert id="saveTag"  parameterType="Tag">
-    insert into t_tag (name) value(#{name})
+    <insert id="saveTag" parameterType="Tag">
+        insert into t_tag (name) value(#{name})
     </insert>
 
     <delete id="deleteTag" parameterType="long">

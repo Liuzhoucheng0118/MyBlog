@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzc.blog.mapper.ImageMapper">
+
+    <select id="getAllImage" resultType="Image">
+        select id,image,url,create_time,text from t_image;
+    </select>
+
+</mapper>

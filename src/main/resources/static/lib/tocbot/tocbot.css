@@ -17,13 +17,13 @@
     padding-left: 10px
 }
 
-.toc-list li a{
+.toc-list li a {
     display: block;
     padding: 4px 0;
     font-weight: 300;
 }
 
-.toc-list li a:hover{
+.toc-list li a:hover {
     color: orange;
 }
 

@@ -18,7 +18,7 @@ import java.util.List;
 @ToString
 @TableName("t_blog")
 public class Blog {
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     private String title;
     private String content;

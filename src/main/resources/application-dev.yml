@@ -1,13 +1,13 @@
 #端口、数据源、thymeleaf、mybatis、表单转化
 
 server:
-  port: 80
+  port: 8080
 
 
 spring:
 
   datasource:
-    username: myblog
+    username: root
     password: 123123
     url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -62,7 +62,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public IPage<Blog> searchBlogs(Page<?> page, String query) {
-        return blogMapper.searchBlogs(page,query);
+        return blogMapper.searchBlogs(page, query);
     }
 
     @Override
@@ -72,8 +72,8 @@ public class BlogServiceImpl implements BlogService {
         String content = MarkdownUtils.markdownToHtmlExtensions(blogcontent);
         blog.setContent(content);
 //      阅读+1
-        Integer views = blog.getViews()+1;
-        updateViews(blog.getId(),views);
+        Integer views = blog.getViews() + 1;
+        updateViews(blog.getId(), views);
 
         blog.setViews(views);
 
@@ -81,13 +81,13 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Integer updateViews(Long blogId,Integer views){
-        return blogMapper.updateViews(blogId,views);
+    public Integer updateViews(Long blogId, Integer views) {
+        return blogMapper.updateViews(blogId, views);
     }
 
     @Override
     public IPage<Blog> selectTagBlogs(Page<?> page, Long tagId) {
-        return blogMapper.selectTagBlogs(page,tagId);
+        return blogMapper.selectTagBlogs(page, tagId);
     }
 
     @Override
@@ -96,17 +96,18 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public HashMap<String,List<Blog>> getBlogOfYear() {
+    public HashMap<String, List<Blog>> getBlogOfYear() {
         List<String> allYear = blogMapper.getAllYear();
-        HashMap<String,List<Blog>> blogMap = new HashMap<>();
+        HashMap<String, List<Blog>> blogMap = new HashMap<>();
         for (String year : allYear) {
             List<Blog> blogOfYear = blogMapper.getBlogOfYear(year);
-            blogMap.put(year,blogOfYear);
+            blogMap.put(year, blogOfYear);
         }
         return blogMap;
     }
+
     @Override
-    public Long BlogNumber(){
+    public Long BlogNumber() {
         return blogMapper.BlogNumber();
     }
 }

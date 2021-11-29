@@ -19,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @TableName("t_user")
 public class User {
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     private String username;
     private String nickname;

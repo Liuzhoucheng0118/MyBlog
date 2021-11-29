@@ -19,13 +19,13 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         HttpSession session = request.getSession();
         Object user = session.getAttribute("user");
-        if (user==null){
-            log.debug("未成功登陆请求"+request.getRequestURI());
+        if (user == null) {
+            log.debug("未成功登陆请求" + request.getRequestURI());
 
-            response.sendRedirect(request.getContextPath()+"/admin");
+            response.sendRedirect(request.getContextPath() + "/admin");
             return false;
         }
-        log.debug("放行请求"+request.getRequestURI());
+        log.debug("放行请求" + request.getRequestURI());
         return true;
     }
 }

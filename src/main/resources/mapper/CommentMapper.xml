@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lzc.blog.mapper.CommentMapper">
 
-<!--    存入一条评论-->
+    <!--    存入一条评论-->
     <insert id="saveComment" parameterType="Comment">
         insert into t_comment(nickname, email, content, avatar,create_time, blog_id, parent_comment_id,admincomment)
         values (#{nickname},#{email},#{content},#{avatar},#{createTime},#{blog.id},#{parentComment.id},#{adminComment})
@@ -14,7 +14,7 @@
     </select>
 
 
-    <select id="commentParentList" parameterType="long"  resultType="Comment">
+    <select id="commentParentList" parameterType="long" resultType="Comment">
         select * from t_comment where parent_comment_id is null and blog_id=#{blogId};
     </select>
 
@@ -23,7 +23,7 @@
     </select>
 
     <insert id="saveUserComment" parameterType="Comment">
-         insert into t_comment(nickname, email, content, avatar,create_time, blog_id, parent_comment_id,admincomment)
+        insert into t_comment(nickname, email, content, avatar,create_time, blog_id, parent_comment_id,admincomment)
         values (#{nickname},#{email},#{content},#{avatar},#{createTime},#{blog.id},#{parentComment.id},#{adminComment})
     </insert>
 </mapper>

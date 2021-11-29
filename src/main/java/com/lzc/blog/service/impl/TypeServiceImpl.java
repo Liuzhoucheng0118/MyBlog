@@ -18,7 +18,8 @@ import java.util.List;
 public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements TypeService {
 
     @Resource
-    private  TypeMapper typeMapper;
+    private TypeMapper typeMapper;
+
     @Override
     public Integer saveType(Type type) {
         return typeMapper.saveType(type);
@@ -33,17 +34,17 @@ public class TypeServiceImpl extends ServiceImpl<TypeMapper, Type> implements Ty
     public Integer updateType(Type tag) {
         System.out.println(tag.getId());
         Type selecttag = typeMapper.getType(tag.getId());
-        if(selecttag==null){
-            log.error("没有该分类:{}",tag.getName());
+        if (selecttag == null) {
+            log.error("没有该分类:{}", tag.getName());
             return -1;
         }
-        return  typeMapper.updateType(tag);
+        return typeMapper.updateType(tag);
     }
 
     @Override
     public Integer deleteType(Long id) {
         Type selectType = typeMapper.getType(id);
-        if(selectType==null){
+        if (selectType == null) {
             log.error("该分类已经不存在");
             return -1;
         }

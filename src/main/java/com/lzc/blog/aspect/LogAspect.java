@@ -1,6 +1,7 @@
 package com.lzc.blog.aspect;
 
 
+import com.lzc.blog.utils.IPUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
@@ -19,37 +20,36 @@ public class LogAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.lzc.blog.web.*.*(..))")
-    public void log(){
+    @Pointcut("execution(* com.lzc.blog.*.*(..))")
+    public void log() {
 
     }
 
     @Before("log()")
-    public void doBefore(JoinPoint joinPoint){
+    public void doBefore(JoinPoint joinPoint) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         String url = request.getRequestURI().toString();
-        String ip = request.getRemoteAddr();
-        String className = joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName();
+        String ip = IPUtils.getIpAddr(request);
+        String className = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
-        RequestLog requestLog = new RequestLog(url,ip,className,args);
-
-        logger.info("Request:{}",requestLog);
+        RequestLog requestLog = new RequestLog(url, ip, className, args);
+        logger.info("Request:{}", requestLog);
     }
 
     @After("log()")
-    public void doAfter(){
+    public void doAfter() {
         logger.info("--------doAfter----------");
 
     }
 
-    @AfterReturning(returning = "result",pointcut = "log()")
-    public void doAfterReturn(Object result){
-        logger.info("Result:{}",result);
+    @AfterReturning(returning = "result", pointcut = "log()")
+    public void doAfterReturn(Object result) {
+        logger.info("Result:{}", result);
     }
 
 
-    private class RequestLog{
+    private class RequestLog {
         private String url;
         private String ip;
         private String classMethod;

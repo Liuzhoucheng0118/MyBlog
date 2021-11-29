@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface FriendService extends IService<Friend> {
     public void updateShow(Integer id);
+
     public List<Friend> getShowFriend();
 }

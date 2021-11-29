@@ -25,31 +25,31 @@
             <result property="nickname" column="nickname"/>
             <result property="avatar" column="avatar"/>
         </association>
-        <association property="type" javaType="Type" >
+        <association property="type" javaType="Type">
             <id property="id" column="t_id"/>
             <result property="name" column="name"/>
         </association>
     </resultMap>
 
 
-
     <sql id="selectAll">
         select
-          b.id as b_id,b.title, b.content, b.first_picture,b.flag, b.views, b.appreciation, b.share_statement, b.commentabled,
-          b.published, b.recommend,b.create_time, b.update_time,b.user_id,b.description, b.tag_ids,
-          t.id as t_id,t.name,
-          u.id as u_id,u.nickname,u.avatar
+        b.id as b_id,b.title, b.content, b.first_picture,b.flag, b.views, b.appreciation, b.share_statement,
+        b.commentabled,
+        b.published, b.recommend,b.create_time, b.update_time,b.user_id,b.description, b.tag_ids,
+        t.id as t_id,t.name,
+        u.id as u_id,u.nickname,u.avatar
         from t_blog b
         LEFT JOIN t_type t on b.type_id=t.id
         LEFT JOIN t_user u on b.user_id=u.id
     </sql>
 
-<!--查询全部-->
+    <!--查询全部-->
     <select id="selectBlogs" parameterType="Blog" resultMap="BlogMap">
         <include refid="selectAll"></include>
     </select>
 
-<!--    根据id查询-->
+    <!--    根据id查询-->
     <select id="getBlogById" parameterType="long" resultMap="BlogMap">
         <include refid="selectAll"></include>
         <where>
@@ -60,7 +60,7 @@
         order by b.id desc
     </select>
 
-<!--多条件查询-->
+    <!--多条件查询-->
     <select id="selectByCondition" resultMap="BlogMap">
 
         <include refid="selectAll"></include>
@@ -75,19 +75,19 @@
         order by b.id desc
     </select>
 
-<!--保存文章-->
+    <!--保存文章-->
     <insert id="saveBlog" parameterType="Blog">
         insert into t_blog(title, content, first_picture,
-          flag, views, appreciation, share_statement, commentabled,
-          published, recommend, create_time, update_time, type_id,
-          user_id,description, tag_ids)
+        flag, views, appreciation, share_statement, commentabled,
+        published, recommend, create_time, update_time, type_id,
+        user_id,description, tag_ids)
         VALUES (#{title},#{content},#{firstPicture},
-                #{flag},#{views},#{appreciation},#{shareStatement},
-                #{commentabled},#{published},#{recommend},#{createTime},
-                #{updateTime},#{type.id},#{user.id},#{description},#{tagIds})
+        #{flag},#{views},#{appreciation},#{shareStatement},
+        #{commentabled},#{published},#{recommend},#{createTime},
+        #{updateTime},#{type.id},#{user.id},#{description},#{tagIds})
     </insert>
 
-<!--更新文章内容-->
+    <!--更新文章内容-->
     <update id="updataBlog" parameterType="Blog">
         update t_blog set
         title=#{title},
@@ -117,9 +117,9 @@
         <include refid="selectAll"></include>
         <where>
             <if test="query!=null">
-            b.title like concat('%',#{query},'%')
-            or
-            b.content like concat('%',#{query},'%')
+                b.title like concat('%',#{query},'%')
+                or
+                b.content like concat('%',#{query},'%')
             </if>
         </where>
     </select>
@@ -134,7 +134,7 @@
         select id from t_blog
         <where>
             <if test="id!=null">
-              id=#{id}
+                id=#{id}
             </if>
         </where>
     </select>
@@ -147,7 +147,7 @@
         <include refid="selectAll"></include>
         <where>
             <if test="tagId!=null">
-             b.tag_ids like concat('%',#{tagId},'%')
+                b.tag_ids like concat('%',#{tagId},'%')
             </if>
         </where>
     </select>
@@ -157,7 +157,7 @@
     </select>
 
     <select id="getBlogOfYear" resultType="Blog">
-        select id,title,create_time,description from t_blog  where date_format(t_blog.create_time,'%Y')=#{year}
+        select id,title,create_time,description from t_blog where date_format(t_blog.create_time,'%Y')=#{year}
     </select>
 
     <select id="BlogNumber" resultType="long">

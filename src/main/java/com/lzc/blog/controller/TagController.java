@@ -4,15 +4,13 @@ package com.lzc.blog.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.pojo.Tag;
 import com.lzc.blog.service.TagService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+@Api(value = "标签操作接口")
 @Controller
 @RequestMapping("/admin")
 public class TagController {
@@ -21,14 +19,14 @@ public class TagController {
     private TagService tagService;
 
     //    跳转到新增分类页
-    @RequestMapping("/tagInput")
+    @GetMapping("/tagInput")
     public String totagInput() {
         return "admin/tags-input";
     }
 
 
     //    分类查询分页
-    @RequestMapping("/tags")
+    @GetMapping("/tags")
     public String toTagPage(@RequestParam(value = "page", defaultValue = "1") Integer pages
             , Model model) {
         Page<Tag> page = new Page<>(pages, 5);
@@ -38,7 +36,7 @@ public class TagController {
     }
 
     //    根据id删除分类
-    @RequestMapping("/tags/{id}/delete")
+    @GetMapping("/tags/{id}/delete")
     public String deleteTag(@PathVariable Long id, RedirectAttributes attributes) {
         Integer lines = tagService.deleteTag(id);
         if (lines == 1) {
@@ -69,22 +67,22 @@ public class TagController {
         return "redirect:/admin/tags";
     }
 
-//    跳转到编辑页面
-    @RequestMapping("/tags/{id}/input")
-    public String edittag(@PathVariable Long id, Model model){
+    //    跳转到编辑页面
+    @GetMapping("/tags/{id}/input")
+    public String edittag(@PathVariable Long id, Model model) {
         Tag tag = tagService.getTag(id);
-        model.addAttribute("tag",tag);
+        model.addAttribute("tag", tag);
         return "admin/tags-edit";
     }
 
-//    更新标签
+    //    更新标签
     @PostMapping("/tags/{id}")
-    public String updatetag(Tag tag ,@PathVariable Long id,Model model) {
+    public String updatetag(Tag tag, @PathVariable Long id, Model model) {
 
         Tag tagInfo = tagService.getTag(id);
         if (tagInfo.getName().equals(tag.getName())) {
             model.addAttribute("message", "分类未修改，无需操作");
-            model.addAttribute("tag",tag);
+            model.addAttribute("tag", tag);
             return "admin/tags-edit";
         }
 

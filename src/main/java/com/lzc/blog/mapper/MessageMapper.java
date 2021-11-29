@@ -1,7 +1,6 @@
 package com.lzc.blog.mapper;
 
 
-
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lzc.blog.pojo.Message;
 import com.lzc.blog.pojo.Type;

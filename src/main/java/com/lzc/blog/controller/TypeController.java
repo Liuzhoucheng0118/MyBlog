@@ -4,15 +4,14 @@ package com.lzc.blog.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.pojo.Type;
 import com.lzc.blog.service.TypeService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+@Api(value = "分类操作接口")
 @Controller
 @RequestMapping("/admin")
 public class TypeController {
@@ -21,14 +20,14 @@ public class TypeController {
     private TypeService typeService;
 
     //    跳转到新增分类页
-    @RequestMapping("/typeInput")
+    @GetMapping("/typeInput")
     public String toTypeInput() {
         return "admin/types-input";
     }
 
 
     //    分类查询分页
-    @RequestMapping("/types")
+    @GetMapping("/types")
     public String toTypePage(@RequestParam(value = "page", defaultValue = "1") Integer pages
             , Model model) {
         Page<Type> page = new Page<>(pages, 5);
@@ -38,7 +37,7 @@ public class TypeController {
     }
 
     //    根据id删除分类
-    @RequestMapping("/types/{id}/delete")
+    @GetMapping("/types/{id}/delete")
     public String deleteType(@PathVariable Long id, RedirectAttributes attributes) {
         Integer lines = typeService.deleteType(id);
         if (lines == 1) {
@@ -69,22 +68,22 @@ public class TypeController {
         return "redirect:/admin/types";
     }
 
-//    跳转到编辑页面
-    @RequestMapping("/types/{id}/input")
-    public String editType(@PathVariable Long id, Model model){
+    //    跳转到编辑页面
+    @GetMapping("/types/{id}/input")
+    public String editType(@PathVariable Long id, Model model) {
         Type type = typeService.getType(id);
-        model.addAttribute("type",type);
+        model.addAttribute("type", type);
         return "admin/types-edit";
     }
 
-//    更新标签
+    //    更新标签
     @PostMapping("/types/{id}")
-    public String updateType(Type type,@PathVariable Long id, Model model) {
+    public String updateType(Type type, @PathVariable Long id, Model model) {
 
         Type typeInfo = typeService.getType(id);
         if (typeInfo.getName().equals(type.getName())) {
             model.addAttribute("message", "分类未修改，无需操作");
-            model.addAttribute("type",type);
+            model.addAttribute("type", type);
             return "admin/types-edit";
         }
 

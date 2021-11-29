@@ -10,8 +10,8 @@
         update t_type set name=#{name} where id=#{id}
     </update>
 
-    <insert id="saveType"  parameterType="Type">
-    insert into t_type(name) value(#{name})
+    <insert id="saveType" parameterType="Type">
+        insert into t_type(name) value(#{name})
     </insert>
 
     <delete id="deleteType" parameterType="long">
@@ -29,7 +29,8 @@
     </resultMap>
 
     <select id="getTypeBlogs" resultMap="Type">
-        select t_type.id as t_id,t_type.name,count(t_blog.id) as blogNumber from t_type LEFT JOIN t_blog on t_blog.type_id=t_type.id
+        select t_type.id as t_id,t_type.name,count(t_blog.id) as blogNumber from t_type LEFT JOIN t_blog on
+        t_blog.type_id=t_type.id
         GROUP BY t_type.id
     </select>
 

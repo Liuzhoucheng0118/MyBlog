@@ -21,6 +21,7 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
 
     @Resource
     private TagMapper tagMapper;
+
     @Override
     public Integer saveTag(Tag tag) {
         return tagMapper.saveTag(tag);
@@ -35,17 +36,17 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     public Integer updateTag(Tag tag) {
         System.out.println(tag.getId());
         Tag selecttag = tagMapper.getTag(tag.getId());
-        if(selecttag==null){
-            log.error("没有该标签:{}",tag.getName());
+        if (selecttag == null) {
+            log.error("没有该标签:{}", tag.getName());
             return -1;
         }
-        return  tagMapper.updateTag(tag);
+        return tagMapper.updateTag(tag);
     }
 
     @Override
     public Integer deleteTag(Long id) {
         Tag selecttag = tagMapper.getTag(id);
-        if(selecttag==null){
+        if (selecttag == null) {
             log.error("该分类已经不存在");
             return -1;
         }
@@ -58,8 +59,8 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     }
 
     @Override
-    public List<Tag> getTagsByTagIds(@Param("ids") String id){
-        id="("+id+")";
+    public List<Tag> getTagsByTagIds(@Param("ids") String id) {
+        id = "(" + id + ")";
         return tagMapper.getTagsByTagIds(id);
     }
 

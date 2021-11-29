@@ -15,7 +15,7 @@ import lombok.ToString;
 @ToString
 @TableName("t_friend")
 public class Friend {
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     private String username;
     private String userinfo;
