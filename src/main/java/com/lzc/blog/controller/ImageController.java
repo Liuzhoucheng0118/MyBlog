@@ -1,15 +1,19 @@
 package com.lzc.blog.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.pojo.Image;
 import com.lzc.blog.service.ImageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.jws.WebParam;
 import java.util.List;
 
 /**
@@ -18,7 +22,6 @@ import java.util.List;
  * @Version 1.0
  */
 @Controller
-@RequestMapping("/admin")
 @Api(value = "图片相关操作")
 public class ImageController {
 
@@ -26,7 +29,7 @@ public class ImageController {
     private ImageService imageService;
 
     @ApiOperation(value = "查询所有的图片")
-    @GetMapping("/images")
+    @GetMapping("/admin/images")
     public String getAllImage(Model model){
         List<Image> images = imageService.getAllImage();
         model.addAttribute("images",images);
@@ -35,17 +38,41 @@ public class ImageController {
 
     @ApiOperation(value = "添加图片")
     @ApiImplicitParam(name = "image",value = "图片实体")
-    @PostMapping("/addimage")
-    public String addImage(@RequestParam Image image){
+    @PostMapping("/admin/addimage")
+    public String addImage(Image image){
         imageService.addImage(image);
         return "redirect:/admin/images";
     }
 
     @ApiOperation(value = "删除图片通过id")
     @ApiImplicitParam(name = "id",value = "图片的id")
-    @GetMapping("/addimage/{id}/delete")
+    @GetMapping("/admin/addimage/{id}/delete")
     public String deleteImage(@PathVariable(name = "id") Integer id){
         imageService.deleteImage(id);
         return "redirect:/admin/images";
     }
+
+    @ApiOperation(value = "前台的图片跳转")
+    @ApiImplicitParam(name = "page",value = "第几页图片")
+    @GetMapping("/image")
+    public String getImages(@RequestParam(value = "page",defaultValue = "1")Integer page,Model model){
+        Page<Image> pages = new Page(page,7);
+        Page<Image> images = imageService.getImages(pages);
+        model.addAttribute("pages",images);
+        return "/images";
+    }
+
+    @ApiOperation( value = "图片使用")
+    @RequestMapping("/admin/userImage")
+    public String toUserImage(String url,Model model){
+        model.addAttribute("url",url);
+        return "admin/blog-input";
+    }
+
+    @ApiOperation(value = "跳转到图片添加页面")
+    @RequestMapping("/admin/toInput")
+    public String imageInput(){
+        return "admin/image-input";
+    }
+
 }

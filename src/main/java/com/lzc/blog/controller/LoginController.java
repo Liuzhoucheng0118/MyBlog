@@ -2,6 +2,7 @@ package com.lzc.blog.controller;
 
 
 import com.baomidou.mybatisplus.extension.api.R;
+import com.lzc.blog.annotation.LogAnnotation;
 import com.lzc.blog.pojo.User;
 import com.lzc.blog.service.UserService;
 import io.swagger.annotations.Api;
@@ -33,6 +34,7 @@ public class LoginController {
 
 
     @PostMapping("/login")
+    @LogAnnotation("访问后台")
     public String loginCheack(@RequestParam String username,
                               @RequestParam String password,
                               HttpSession session,

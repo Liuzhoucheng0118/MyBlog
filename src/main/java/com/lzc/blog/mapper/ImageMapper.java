@@ -1,5 +1,6 @@
 package com.lzc.blog.mapper;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.pojo.Image;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,4 +21,6 @@ public interface ImageMapper {
     public void addImage(Image image);
 
     public void deleteImage(Integer id);
+
+    public Page<Image> getImages(Page<?> page);
 }

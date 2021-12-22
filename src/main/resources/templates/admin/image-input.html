@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ZHEMU的小世界</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+    <nav  th:replace="admin/_fragments :: menu(-1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"  style="height: 68px;z-index: 1!important;">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">管理后台</h2>
+                <a href="#" class="active m-item item m-mobile-hide"><i class=" home icon"></i>文章</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class=" idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+                <div class="right m-item m-mobile-hide menu">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" src="../../static/images/avater.png">
+                            ZHEMU
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class=" menu">
+                            <a href="#" class=" item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-moblie-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+<!--    二级导航-->
+    <br>
+    <br>
+    <br>
+<!--    中间容器-->
+
+        <div class="m-container m-padded-tb-big animated zoomIn">
+            <div class="ui container">
+                <form id="blog-form"  method="post" th:action="@{/admin/addimage}" class="ui segment form">
+                    <div class="required field">
+                        <div class="ui left labeled input">
+                            <div class="ui compact teal basic label">
+                                <div class="text" >标题</div>
+                            </div>
+                            <input type="text" name="image" placeholder="标题">
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        <div class="ui  labeled m-margin-top input">
+                            <label class="ui teal basic label">描述</label>
+                            <input type="text" name="text" placeholder="描述">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="required field">
+                            <div class="ui  labeled input">
+                                <label class="ui teal basic label">封面</label>
+                                <input type="text" name="url" placeholder="引用地址">
+                            </div>
+                    </div>
+                    <div class="ui right aligned container">
+                        <button  type="button" id="publish-btn" class="ui black button">发布</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="five wide column">
+                    <div class="ui  inverted link list">
+                        <h4 class="ui inverted header">个人联系方式</h4>
+                        <a href="#" class="item m-text-thin m-text-spaced ">Email:369039150@qq.com</a>
+                        <a href="#" class="item m-text-thin m-text-spaced ">QQ:369039150</a>
+                        <p class="m-padded-small m-text-spaced m-opacity-miniplus">这是我的个人博客，会分享一些我自己在学习过程中遇到的种种问题，希望可以帮助到来到这里的人</p>
+                    </div>
+                </div>
+                <div class="three wide column ">
+                    <div class="ui inverted link list">
+                        <img src="../../static/images/weixin.jpg" class="ui  centered bordered rounded image " alt="" style="width: 120px">
+                    </div>
+                    </div>
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <img src="../../static/images/qq.jpg" class="ui  centered bordered rounded image " alt="" style="width: 120px">
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui inverted link list">
+                        <h4 class="ui inverted header">最新博客</h4>
+                        <a href="#" class="item">文章：</a>
+                        <a href="#" class="item">访问：</a>
+                        <a href="#" class="item">点赞：</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui inverted section divider"></div>
+                <p class="m-text-thin m-text-spaced m-opacity-miniplus">Copyright @ 2021-2022 Study by ZHEMU</p>
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+
+    <script>
+
+
+
+    $('.meau.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+
+        $('#save-btn').click(function () {
+            $('[name="published"]').val(false);
+            $('#blog-form').submit();
+        });
+
+
+        $('#publish-btn').click(function () {
+            $('[name="published"]').val(true);
+            $('#blog-form').submit();
+        });
+
+
+
+</script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.lzc.blog.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.pojo.Image;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface ImageService {
     public void addImage(Image image);
 
     public void deleteImage(Integer id);
+
+    public Page<Image> getImages(Page<?> page);
 }

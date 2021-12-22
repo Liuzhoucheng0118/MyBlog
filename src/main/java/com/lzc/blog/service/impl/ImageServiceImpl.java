@@ -1,5 +1,6 @@
 package com.lzc.blog.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.mapper.ImageMapper;
 import com.lzc.blog.pojo.Image;
 import com.lzc.blog.service.ImageService;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,11 +30,17 @@ public class ImageServiceImpl implements ImageService {
     @Override
     @Transactional
     public void addImage(Image image) {
-         imageMapper.addImage(image);
+        image.setCreateTime(new Date());
+        imageMapper.addImage(image);
     }
 
     @Override
     public void deleteImage(Integer id) {
         imageMapper.deleteImage(id);
+    }
+
+    @Override
+    public Page<Image> getImages(Page page){
+        return imageMapper.getImages(page);
     }
 }

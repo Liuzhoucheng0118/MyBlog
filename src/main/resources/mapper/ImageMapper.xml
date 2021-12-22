@@ -4,7 +4,18 @@
 <mapper namespace="com.lzc.blog.mapper.ImageMapper">
 
     <select id="getAllImage" resultType="Image">
-        select id,image,url,create_time,text from t_image;
+        select id,image,url,create_time,text from t_image
     </select>
 
+    <insert id="addImage" parameterType="Image">
+        insert into t_image(image, url, create_time, text) VALUES (#{image},#{url},#{createTime},#{text})
+    </insert>
+
+    <delete id="deleteImage" parameterType="int">
+        delete from t_image where t_image.id = #{id}
+    </delete>
+
+    <select id="getImages" resultType="Image">
+        select id,image,url,create_time,text from t_image
+    </select>
 </mapper>

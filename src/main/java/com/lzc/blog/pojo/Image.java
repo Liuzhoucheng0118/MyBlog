@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Date;
+
 /**
  * @Author liuzhoucheng
  * @Date 2021/11/29 19:36
@@ -23,7 +25,7 @@ public class Image {
     private String image;
     private String text;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String createTime;
+    private Date createTime;
     private String url;
 
 }

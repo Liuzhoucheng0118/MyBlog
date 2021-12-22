@@ -102,7 +102,8 @@
                     <div class="filed">
                             <div class="ui left labeled input">
                                 <label class="ui teal basic label">封面</label>
-                                <input type="text" name="firstPicture" placeholder="首图引用地址">
+                                <input type="text" th:if="${url}!=null" th:value="${url}" name="firstPicture" placeholder="首图引用地址">
+                                <input type="text" th:if="${url}==null"  name="firstPicture" placeholder="首图引用地址">
                             </div>
                     </div>
                     <div class="filed">
