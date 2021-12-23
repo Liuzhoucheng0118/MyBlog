@@ -20,5 +20,5 @@ public class Friend {
     private String username;
     private String userinfo;
     private String webadress;
-    private Integer show;
+    private Integer showStatement;
 }

@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import sun.dc.pr.PRError;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Api(value = "友链操作接口")
@@ -27,6 +24,7 @@ public class FriendController {
 
     @Autowired
     private FriendService friendService;
+
     @Autowired
     private InfoService infoService;
 
@@ -35,7 +33,7 @@ public class FriendController {
 
         List<Friend> showFriend = friendService.getShowFriend();
         model.addAttribute("friends", showFriend);
-        return "/friends";
+        return "friends";
     }
 
     @ApiOperation(value = "申请成为友链")
@@ -43,7 +41,7 @@ public class FriendController {
     public String apply(Friend friend, Model model) {
         friendService.save(friend);
         model.addAttribute("message", "申请成功");
-        return "/friends";
+        return "friends";
     }
 
     @ApiOperation(value = "获取全部的友链信息")
@@ -53,7 +51,7 @@ public class FriendController {
         Page<Friend> pages = new Page(page,7);
         IPage<Friend> friends = friendService.getAllFriend(pages);
         model.addAttribute("pages",friends);
-        return "/admin/friends";
+        return "admin/friends";
     }
 
     @ApiOperation(value = "激活用户")

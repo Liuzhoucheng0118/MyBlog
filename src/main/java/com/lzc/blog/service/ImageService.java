@@ -10,12 +10,14 @@ import java.util.List;
  * @Date 2021/11/29 19:46
  * @Version 1.0
  */
+
 public interface ImageService {
-    public List<Image> getAllImage();
+    List<Image> getAllImage();
 
-    public void addImage(Image image);
+    void addImage(Image image);
 
-    public void deleteImage(Integer id);
+    void deleteImage(Integer id);
 
-    public Page<Image> getImages(Page<?> page);
+    Page<Image> getImages(Page<?> page);
+
 }

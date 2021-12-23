@@ -1,11 +1,12 @@
 package com.lzc.blog.service.impl;
 
+
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lzc.blog.mapper.ImageMapper;
 import com.lzc.blog.pojo.Image;
 import com.lzc.blog.service.ImageService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -24,11 +25,9 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public List<Image> getAllImage() {
-        return imageMapper.getAllImage();
-    }
+        return imageMapper.getAllImage();    }
 
     @Override
-    @Transactional
     public void addImage(Image image) {
         image.setCreateTime(new Date());
         imageMapper.addImage(image);
@@ -40,7 +39,7 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public Page<Image> getImages(Page page){
+    public Page<Image> getImages(Page<?> page) {
         return imageMapper.getImages(page);
     }
 }

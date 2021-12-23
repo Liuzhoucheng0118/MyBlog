@@ -7,6 +7,5 @@ public interface InfoService {
 
     public void updataCustomer(Long number);
 
-
     public void updataFriends(Long number);
 }

@@ -1,5 +1,7 @@
 package com.lzc.blog.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzc.blog.pojo.Friend;
 import com.lzc.blog.pojo.Message;
@@ -7,7 +9,13 @@ import com.lzc.blog.pojo.Message;
 import java.util.List;
 
 public interface FriendService extends IService<Friend> {
-    public void updateShow(Integer id);
+     void updateShow(Integer id);
 
-    public List<Friend> getShowFriend();
+     List<Friend> getShowFriend();
+
+    IPage<Friend> getAllFriend(Page<Friend> pages);
+
+    void toCloaseFriend(Integer id);
+
+    void deleteFriendById(Integer id);
 }

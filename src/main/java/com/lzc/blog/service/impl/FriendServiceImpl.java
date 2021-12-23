@@ -1,6 +1,8 @@
 package com.lzc.blog.service.impl;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lzc.blog.mapper.FriendMapper;
 import com.lzc.blog.mapper.MessageMapper;
@@ -16,8 +18,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-@Transactional
-@Slf4j
 public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> implements FriendService {
 
     @Resource
@@ -32,6 +32,22 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
     public List<Friend> getShowFriend() {
         return friendMapper.getShowFriend();
     }
+
+    @Override
+    public IPage<Friend> getAllFriend(Page<Friend> pages) {
+        return friendMapper.getAllFriends(pages);
+    }
+
+    @Override
+    public void toCloaseFriend(Integer id) {
+        friendMapper.toCloaseFriend(id);
+    }
+
+    @Override
+    public void deleteFriendById(Integer id) {
+        friendMapper.deleteById(id);
+    }
+
 
 }
 
