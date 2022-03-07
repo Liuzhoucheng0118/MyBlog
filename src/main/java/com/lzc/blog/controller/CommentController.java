@@ -47,4 +47,5 @@ public class CommentController {
         }
         return "redirect:/comments/" + blogId;
     }
+
 }

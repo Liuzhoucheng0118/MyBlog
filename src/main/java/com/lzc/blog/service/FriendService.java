@@ -9,9 +9,9 @@ import com.lzc.blog.pojo.Message;
 import java.util.List;
 
 public interface FriendService extends IService<Friend> {
-     void updateShow(Integer id);
+    void updateShow(Integer id);
 
-     List<Friend> getShowFriend();
+    List<Friend> getShowFriend();
 
     IPage<Friend> getAllFriend(Page<Friend> pages);
 

@@ -29,7 +29,7 @@ public class MyLogAspect {
     private LogMapper logMapper;
 
     @Pointcut("@annotation(com.lzc.blog.annotation.LogAnnotation)")
-    public void pointCut(){
+    public void pointCut() {
 
     }
 
@@ -41,21 +41,21 @@ public class MyLogAspect {
         saveLog(point, time);
     }
 
-    public void saveLog(JoinPoint point, Date time){
-        MethodSignature signature =(MethodSignature) point.getSignature();
+    public void saveLog(JoinPoint point, Date time) {
+        MethodSignature signature = (MethodSignature) point.getSignature();
         LogAnnotation annotation = signature.getMethod().getAnnotation(LogAnnotation.class);
         String value = annotation.value();//注解信息
         Log log = new Log();
-        if(value!=null){
+        if (value != null) {
             log.setOperation(value);
         }
 
         HttpServletRequest request = RequestUtils.getRequest();
         log.setIp(IPUtils.getIpAddr(request));
-        User user = (User)request.getSession().getAttribute("user");
-        if(user!=null){
+        User user = (User) request.getSession().getAttribute("user");
+        if (user != null) {
             log.setUsername(user.getNickname());
-        }else{
+        } else {
             log.setUsername("游客");
         }
         log.setCreateTime(time);

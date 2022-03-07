@@ -15,13 +15,14 @@ import javax.servlet.http.HttpServletRequest;
  * @Version 1.0
  */
 public class RequestUtils {
-    public static HttpServletRequest getRequest(){
-        return  ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+    public static HttpServletRequest getRequest() {
+        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
     }
-    public static String  getBrowser(){
+
+    public static String getBrowser() {
         UserAgent userAgent = UserAgent.parseUserAgentString(getRequest().getHeader("User-Agent"));
         String browser = userAgent.getBrowser().getName();
         String operatingSystem = userAgent.getOperatingSystem().getName();
-        return operatingSystem+" "+browser;
+        return operatingSystem + " " + browser;
     }
 }

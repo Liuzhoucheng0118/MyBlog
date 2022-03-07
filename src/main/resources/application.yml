@@ -2,5 +2,5 @@
 
 spring:
   profiles:
-    active: dev
+    active: pro
 comment.avatar: https://semantic-ui.com/images/avatar2/large/elyse.png

@@ -28,10 +28,11 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build();
     }
+
     private ApiInfo buildApiInf() {
         return new ApiInfoBuilder()
                 .title("MyBlog-接口文档Aip")
-                .contact(new Contact("ZHEMU","http://112.124.31.128/blogs","369039150@qq.com"))
+                .contact(new Contact("ZHEMU", "http://112.124.31.128/blogs", "369039150@qq.com"))
                 .version("1.0")
                 .build();
     }

@@ -37,43 +37,43 @@ public class ImageController {
 
     @ApiOperation(value = "查询所有的图片")
     @GetMapping("/admin/images")
-    public String getAllImage(Model model){
+    public String getAllImage(Model model) {
         List<Image> images = imageService.getAllImage();
-        model.addAttribute("images",images);
+        model.addAttribute("images", images);
         return "admin/images";
     }
 
     @ApiOperation(value = "添加图片")
-    @ApiImplicitParam(name = "image",value = "图片实体")
+    @ApiImplicitParam(name = "image", value = "图片实体")
     @PostMapping("/admin/addimage")
-    public String addImage(Image image){
+    public String addImage(Image image) {
         imageService.addImage(image);
         return "redirect:/admin/images";
     }
 
     @ApiOperation(value = "删除图片通过id")
-    @ApiImplicitParam(name = "id",value = "图片的id")
+    @ApiImplicitParam(name = "id", value = "图片的id")
     @GetMapping("/admin/addimage/{id}/delete")
-    public String deleteImage(@PathVariable(name = "id") Integer id){
+    public String deleteImage(@PathVariable(name = "id") Integer id) {
         imageService.deleteImage(id);
         return "redirect:/admin/images";
     }
 
     @ApiOperation(value = "前台的图片跳转")
-    @ApiImplicitParam(name = "page",value = "第几页图片")
+    @ApiImplicitParam(name = "page", value = "第几页图片")
     @GetMapping("/image")
-    public String getImages(@RequestParam(value = "page",defaultValue = "1")Integer page, Model model){
-        Page<Image> pages = new Page(page,7);
+    public String getImages(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
+        Page<Image> pages = new Page(page, 7);
         Page<Image> images = imageService.getImages(pages);
-        model.addAttribute("pages",images);
+        model.addAttribute("pages", images);
         return "images";
     }
 
-    @ApiOperation( value = "图片使用")
+    @ApiOperation(value = "图片使用")
     @RequestMapping("/admin/userImage")
-    public String toUserImage(String url,Model model){
+    public String toUserImage(String url, Model model) {
         Blog blog = new Blog();
-        model.addAttribute("url",url);
+        model.addAttribute("url", url);
         model.addAttribute("types", typeService.list());
         model.addAttribute("tags", tagService.list());
         model.addAttribute("blog", blog);
@@ -82,7 +82,7 @@ public class ImageController {
 
     @ApiOperation(value = "跳转到图片添加页面")
     @RequestMapping("/admin/toInput")
-    public String imageInput(){
+    public String imageInput() {
         return "admin/image-input";
     }
 

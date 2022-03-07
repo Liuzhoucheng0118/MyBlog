@@ -45,30 +45,32 @@ public class FriendController {
     }
 
     @ApiOperation(value = "获取全部的友链信息")
-    @ApiImplicitParam(name = "page",value = "第几页友链")
+    @ApiImplicitParam(name = "page", value = "第几页友链")
     @GetMapping("/admin/friends")
-    public String getImages(@RequestParam(value = "page",defaultValue = "1")Integer page, Model model){
-        Page<Friend> pages = new Page(page,7);
+    public String getImages(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
+        Page<Friend> pages = new Page(page, 7);
         IPage<Friend> friends = friendService.getAllFriend(pages);
-        model.addAttribute("pages",friends);
+        model.addAttribute("pages", friends);
         return "admin/friends";
     }
 
     @ApiOperation(value = "激活用户")
     @RequestMapping("/admin/friends/{id}/active")
-    public String toActiveUser(@PathVariable(value = "id") Integer id){
+    public String toActiveUser(@PathVariable(value = "id") Integer id) {
         friendService.updateShow(id);
         return "redirect:/admin/friends";
     }
+
     @ApiOperation(value = "关闭用户")
     @RequestMapping("/admin/friends/{id}/close")
-    public String toCloseUser(@PathVariable(value = "id") Integer id){
+    public String toCloseUser(@PathVariable(value = "id") Integer id) {
         friendService.toCloaseFriend(id);
         return "redirect:/admin/friends";
     }
+
     @ApiOperation(value = "删除用户")
     @RequestMapping("/admin/friends/{id}/delete")
-    public String toDeleteUser(@PathVariable(value = "id") Integer id){
+    public String toDeleteUser(@PathVariable(value = "id") Integer id) {
         friendService.deleteFriendById(id);
         return "redirect:/admin/friends";
     }

@@ -25,7 +25,8 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public List<Image> getAllImage() {
-        return imageMapper.getAllImage();    }
+        return imageMapper.getAllImage();
+    }
 
     @Override
     public void addImage(Image image) {
