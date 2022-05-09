@@ -1,5 +1,6 @@
 package com.lzc.blog.common;
 
+import com.lzc.blog.pojo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -18,13 +19,16 @@ public class LoginInterceptor implements HandlerInterceptor {
             throws Exception {
 
         HttpSession session = request.getSession();
-        Object user = session.getAttribute("user");
+        User user =(User) session.getAttribute("user");
         if (user == null) {
             log.debug("未成功登陆请求" + request.getRequestURI());
 
             response.sendRedirect(request.getContextPath() + "/admin");
             return false;
         }
+        Long uid = user.getId();
+        log.info("目前放行的user:{}",user);
+        request.setAttribute("uid",uid);
         log.debug("放行请求" + request.getRequestURI());
         return true;
     }

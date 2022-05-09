@@ -19,6 +19,7 @@ import java.util.List;
 public class Tag {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
+    private Integer uid;
     private String name;
     @TableField(exist = false)
     private List<Blog> blogs;

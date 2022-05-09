@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Api(value = "文章操作接口")
@@ -48,9 +49,9 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public String toBlog(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
+    public String toBlog(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model,@RequestParam("uid") Long uid) {
         Page<Blog> pages = new Page<>(page, 5);
-        IPage<Blog> blogIPage = blogServiceImpl.selectBlogs(pages);
+        IPage<Blog> blogIPage = blogServiceImpl.selectBlogs(pages,uid);
         model.addAttribute("pages", blogIPage);
         model.addAttribute("types", typeService.list());
         return "admin/blog";
@@ -59,9 +60,10 @@ public class BlogController {
     @PostMapping("/blogs/search")
     public String searchBlog(@RequestParam(value = "page", defaultValue = "1") Integer page,
                              Model model,
-                             BlogQuery blogQuery) {
+                             BlogQuery blogQuery,
+                             @RequestParam("uid") Long uid) {
         Page<Blog> pages = new Page<>(page, 5);
-        IPage<Blog> blogIPage = blogServiceImpl.selectByCondition(pages, blogQuery);
+        IPage<Blog> blogIPage = blogServiceImpl.selectByCondition(pages, blogQuery,uid);
         model.addAttribute("pages", blogIPage);
         return "admin/blog::blogList";
     }
@@ -82,8 +84,8 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/{id}/input")
-    public String editBlog(@PathVariable("id") Long id, Model model) {
-        Blog blog = blogServiceImpl.getBlogById(id);
+    public String editBlog(@PathVariable("id") Long id, Model model,@RequestParam("uid") Long uid) {
+        Blog blog = blogServiceImpl.getBlogById(id,uid);
         model.addAttribute("types", typeService.list());
         model.addAttribute("tags", tagService.list());
         model.addAttribute("blog", blog);

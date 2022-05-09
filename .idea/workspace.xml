@@ -2,25 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd4d109c-3b7d-499b-95e3-7f82f9b6ef57" name="Default Changelist" comment="squash! 图片管理模块完成">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8cced94d-1783-4af8-b5ed-e545316579c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8cced94d-1783-4af8-b5ed-e545316579c2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/blog-dev.log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/annotation/LogAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/annotation/LogAnnotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/aspect/MyLogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/aspect/MyLogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/common/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/common/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/common/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/common/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/ArchivesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/ArchivesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/FriendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/ImageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/TagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/FriendService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/ImageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/utils/IPUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/utils/IPUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/utils/RequestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/utils/RequestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/TagIndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/TagIndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/TypeIndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/controller/TypeIndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/mapper/BlogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/mapper/BlogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/mapper/TagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/mapper/TagMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/pojo/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzc/blog/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-pro.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-pro.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BlogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BlogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/IUserMapper.xml" afterDir="false" />
     </list>
     <list id="6a5967b5-b682-4b05-a37c-36c4091329f0" name="2021年12月1日 20:42:16" comment="友链修复" />
     <list id="f9fceaa9-4e3b-4dad-b3bc-e53a398ea0b2" name="Revert &quot;图片管理模块完成&quot;" comment="Revert &quot;图片管理模块完成&quot;&#10;&#10;This reverts commit 0c4ef009" />
@@ -118,7 +130,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../product7890/src/main/resources/templates/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -132,12 +144,12 @@
     <property name="vcs.patch.to.clipboard" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\templates\admin" />
+      <recent name="C:\Git-Space\product7890\src\main\resources\templates\image" />
       <recent name="C:\Git-Space\MyBlog\src\main\resources\static\images" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources\templates" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\css" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\editormd" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\mp3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lzc.blog.service.impl" />
@@ -145,12 +157,12 @@
       <recent name="com.lzc.blog.mapper" />
       <recent name="com.lzc.blog.controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Git-Space\product7890\src\main\resources\templates\image" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Git-Space\MyBlog\src\main\resources\static\images" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\editormd" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\mp3" />
-      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\Aplayer" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\templates" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\lib\" />
+      <recent name="C:\Git-Space\MyBlog\src\main\resources\static\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -160,27 +172,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Product7890Application">
-    <configuration name="MyTest.tagtest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBlog" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="tagtest2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest.typetest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBlog" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="typetest1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestMapper.tes">
     <configuration name="MyTest.typetest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyBlog" />
       <option name="PACKAGE_NAME" value="" />
@@ -196,6 +188,25 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Test11" />
       <option name="METHOD_NAME" value="sada" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestMapper" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMapper.tes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlog" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestMapper" />
+      <option name="METHOD_NAME" value="tes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -279,11 +290,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestMapper.tes" />
+        <item itemvalue="JUnit.TestMapper" />
         <item itemvalue="Spring Boot.MyBlogApplication" />
         <item itemvalue="JUnit.Test11.sada" />
         <item itemvalue="JUnit.MyTest.typetest2" />
-        <item itemvalue="JUnit.MyTest.typetest1" />
-        <item itemvalue="JUnit.MyTest.tagtest2" />
       </list>
     </recent_temporary>
   </component>
@@ -366,6 +377,11 @@
       <workItem from="1644930459302" duration="37000" />
       <workItem from="1644932570990" duration="21000" />
       <workItem from="1646015712164" duration="654000" />
+      <workItem from="1650528347733" duration="1695000" />
+      <workItem from="1651740434363" duration="799000" />
+      <workItem from="1651741994903" duration="210000" />
+      <workItem from="1651798595125" duration="116000" />
+      <workItem from="1652079083148" duration="1275000" />
     </task>
     <task id="LOCAL-00001" summary="2021年10月26日 20:58:43">
       <created>1635253249129</created>
@@ -530,90 +546,54 @@
     <option name="LAST_COMMIT_MESSAGE" value="友链修复" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="296" y="86" width="957" height="651" key="#Product7890Application_(1)" timestamp="1641794352798">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1652080092808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="296" y="86" width="957" height="651" key="#Product7890Application_(1)/0.0.1536.824@0.0.1536.824" timestamp="1641794352798" />
-    <state x="880" y="178" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1640188721538">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="880" y="178" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1640188721538" />
-    <state x="956" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1640189215405">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="956" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1640189215405" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1652080092808" />
     <state x="229" y="0" key="CommitChangelistDialog2" timestamp="1646630606546">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="229" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1646630606546" />
-    <state x="70" y="18" width="1350" height="638" key="DiffContextDialog" timestamp="1640171535417">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1650528461387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="70" y="18" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1640171535417" />
-    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1641794041885">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1650528461387" />
+    <state width="1493" height="438" key="GridCell.Tab.0.bottom" timestamp="1651798711670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1641794041885" />
-    <state x="630" y="308" key="GitRewordDialog" timestamp="1640170861311">
+    <state width="1493" height="438" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1651798711670" />
+    <state width="1493" height="438" key="GridCell.Tab.0.center" timestamp="1651798711670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="630" y="308" key="GitRewordDialog/0.0.1536.824@0.0.1536.824" timestamp="1640170861311" />
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1641805660536">
+    <state width="1493" height="438" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1651798711670" />
+    <state width="1493" height="438" key="GridCell.Tab.0.left" timestamp="1651798711670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.0.center" timestamp="1641805660536">
+    <state width="1493" height="438" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1651798711670" />
+    <state width="1493" height="438" key="GridCell.Tab.0.right" timestamp="1651798711670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.0.left" timestamp="1641805660536">
+    <state width="1493" height="438" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1651798711670" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1650530043918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.0.right" timestamp="1641805660536">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1650530043918" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1650530043918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1641805660536">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1650530043918" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1650530043918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.1.center" timestamp="1641805660536">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1650530043918" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1650530043918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.1.left" timestamp="1641805660536">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state width="1024" height="210" key="GridCell.Tab.1.right" timestamp="1641805660536">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1641805660536" />
-    <state x="477" y="127" key="MultipleFileMergeDialog" timestamp="1640171822353">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="477" y="127" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1640171822353" />
-    <state x="640" y="134" key="RollbackChangesDialog" timestamp="1640170996521">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="640" y="134" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1640170996521" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1650530043918" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1644914553474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1644914553474" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1640231470856">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1640231470856" />
-    <state x="520" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1640171496686">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="520" y="146" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1640171496686" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1640172884648">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1536.824@0.0.1536.824" timestamp="1640172884648" />
     <state x="851" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1644914390094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -622,22 +602,6 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="554" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1646020609318" />
-    <state x="555" y="202" key="git4idea.merge.GitMergeDialog" timestamp="1640172378276">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="555" y="202" key="git4idea.merge.GitMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1640172378276" />
-    <state x="460" y="202" key="git4idea.merge.GitPullDialog" timestamp="1640231446453">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="460" y="202" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1640231446453" />
-    <state x="510" y="154" key="git4idea.rebase.GitRebaseEditor" timestamp="1640170866557">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="510" y="154" key="git4idea.rebase.GitRebaseEditor/0.0.1536.824@0.0.1536.824" timestamp="1640170866557" />
-    <state x="578" y="306" key="git4idea.ui.GitResetDialog" timestamp="1640171010837">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="578" y="306" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1640171010837" />
     <state x="178" y="113" key="new project wizard" timestamp="1644917287879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

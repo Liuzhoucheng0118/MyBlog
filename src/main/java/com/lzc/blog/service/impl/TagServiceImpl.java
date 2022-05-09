@@ -7,6 +7,7 @@ import com.lzc.blog.pojo.Tag;
 import com.lzc.blog.service.TagService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -69,7 +70,10 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
         return tagMapper.getAllTags();
     }
 
-
+    @Override
+    public List<Tag> getTageForPage(int number, int startIndex, int pageSize) {
+        return tagMapper.getTageForPage(number,new RowBounds(startIndex,pageSize));
+    }
 }
 
 

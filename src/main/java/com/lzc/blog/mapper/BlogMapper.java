@@ -22,6 +22,8 @@ public interface BlogMapper extends BaseMapper<Blog> {
 
     public Blog getBlogById(Long id);
 
+    public List<Blog> getBlogByIds(List<Long> ids);
+
     public Integer updataBlog(Blog blog);
 
     public Integer deleteBlog(Long id);
@@ -40,5 +42,6 @@ public interface BlogMapper extends BaseMapper<Blog> {
 
     public List<Blog> getBlogOfYear(String year);
 
-    public Long BlogNumber();
+    public Long BlogNumber(@Param("uid") Long uid);
+
 }

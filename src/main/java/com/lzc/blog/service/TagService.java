@@ -3,6 +3,7 @@ package com.lzc.blog.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzc.blog.pojo.Tag;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -25,4 +26,6 @@ public interface TagService extends IService<Tag> {
     public List<Tag> getTagsByTagIds(@Param("ids") String id);
 
     public List<Tag> getAllTags();
+
+    public List<Tag> getTageForPage(int number, int startIndex , int pageSize);
 }

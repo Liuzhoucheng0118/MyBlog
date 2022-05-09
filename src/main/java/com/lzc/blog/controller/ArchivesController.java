@@ -20,8 +20,8 @@ public class ArchivesController {
 
     @GetMapping("/archives")
     public String archives(Model model) {
-        HashMap<String, List<Blog>> map = blogService.getBlogOfYear();
-        model.addAttribute("yearMap", map);
+//        HashMap<String, List<Blog>> map = blogService.getBlogOfYear();
+//        model.addAttribute("yearMap", map);
         return "archives";
     }
 }

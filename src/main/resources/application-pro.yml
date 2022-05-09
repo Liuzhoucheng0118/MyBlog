@@ -41,8 +41,8 @@ mybatis-plus:
 
 logging:
   level:
-    root: warn
-    com.lzc: info
+    root: debug
+    com.lzc: debug
   file:
     path: log/blog-dev.log
 

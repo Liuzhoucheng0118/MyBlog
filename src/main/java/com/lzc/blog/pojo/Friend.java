@@ -17,6 +17,7 @@ import lombok.ToString;
 public class Friend {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
+    private Integer uid;
     private String username;
     private String userinfo;
     private String webadress;

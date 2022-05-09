@@ -21,6 +21,7 @@ import java.util.Date;
 public class Message {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
+    private Integer uid;
     private String nickname;
     private String email;
     private String content;

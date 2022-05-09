@@ -29,4 +29,13 @@
     <select id="getAllTags" resultType="Tag">
         select * from t_tag
     </select>
+
+    <select id="getTageForPage" parameterType="int" resultType="Tag">
+        select * from t_tag
+        <where>
+            <if test="number != null">
+                and id &lt;#{number}
+            </if>
+        </where>
+    </select>
 </mapper>

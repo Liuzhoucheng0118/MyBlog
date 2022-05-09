@@ -20,9 +20,8 @@ import java.util.List;
 public class Type {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-
+    private Integer uid;
     private String name;
-
     @TableField(exist = false)
     private List<Blog> blogs;
     @TableField(exist = false)

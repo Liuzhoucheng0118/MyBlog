@@ -9,4 +9,9 @@
         <select id="getUserById" parameterType="long" resultType="User">
         select id,nickname,username,email,avatar from t_user where id = #{id}
         </select>
+
+        <insert id="add" parameterType="User">
+            insert into t_user(nickname, username, password, email, avatar, type, create_time, update_time)
+            VALUES(#{nickname},#{username},#{password},#{email},#{avatar},#{type},#{createTime},#{updateTime})
+        </insert>
 </mapper>

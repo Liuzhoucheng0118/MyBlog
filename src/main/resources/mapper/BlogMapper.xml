@@ -50,12 +50,23 @@
     </select>
 
     <!--    根据id查询-->
-    <select id="getBlogById" parameterType="long" resultMap="BlogMap">
+    <select id="getBlogById" parameterType="String" resultMap="BlogMap">
         <include refid="selectAll"></include>
         <where>
             <if test="id !=null">
                 b.id=#{id}
             </if>
+        </where>
+        order by b.id desc
+    </select>
+
+    <select id="getBlogByIds" parameterType="java.lang.Long"  resultMap="BlogMap">
+        <include refid="selectAll"></include>
+        <where>
+           b.id in
+           <foreach collection="list" item="id" open="(" separator="," close=")">
+               #{id}
+           </foreach>
         </where>
         order by b.id desc
     </select>
@@ -143,7 +154,7 @@
         update t_blog set views=#{views} where id=#{blogId}
     </update>
 
-    <select id="selectTagBlogs" resultMap="BlogMap">
+    <select id="selectTagBlogs"  resultMap="BlogMap">
         <include refid="selectAll"></include>
         <where>
             <if test="tagId!=null">

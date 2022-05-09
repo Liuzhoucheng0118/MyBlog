@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 @Api(value = "登录操作接口")
 @Controller
@@ -32,6 +33,33 @@ public class LoginController {
         return "admin/login";
     }
 
+    @PostMapping("/register")
+    public String register(@RequestParam String username,
+                           @RequestParam String password,
+                           @RequestParam String repassword,
+                           RedirectAttributes attributes){
+        User user = userService.cheackUser(username);
+        if(user!=null){
+            attributes.addFlashAttribute("message", "该用户名已存在");
+            return "redirect:/admin";
+        }else{
+            if(password.equals(repassword)){
+                BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+                password = bCryptPasswordEncoder.encode(password);
+                user.setNickname(username);
+                user.setPassword(password);
+                user.setUsername(username);
+                user.setCreateTime(new Date());
+                user.setAvatar("/images/avater.png");
+                userService.add(user);
+            }else{
+                attributes.addFlashAttribute("message", "密码不一致，请重新输入");
+                return "redirect:/admin";
+            }
+        }
+
+        return "admin/login";
+    }
 
     @PostMapping("/login")
     @LogAnnotation("访问后台")

@@ -46,9 +46,9 @@ public class IndexController {
 
     @LogAnnotation("进入首页")
     @GetMapping("/blogs")
-    public String toBlog(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model, HttpSession session) {
+    public String toBlog(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model, HttpSession session,@RequestParam("uid") Long uid) {
         if (session.getAttribute("info") == null) {
-            Long blogNumber = blogService.BlogNumber();
+            Long blogNumber = blogService.BlogNumber(uid);
 //        获取游客和友链数并+1
             Info info = infoService.getInfo();
             Long customer = info.getCustomer();
@@ -61,15 +61,15 @@ public class IndexController {
 //       分页获取博客
         }
         Page<Blog> pages = new Page<>(page, 5);
-        IPage<Blog> blogIPage = blogService.selectBlogs(pages);
+        IPage<Blog> blogIPage = blogService.selectBlogs(pages,uid);
 //        存入session
         model.addAttribute("pages", blogIPage);
         return "index";
     }
 
     @GetMapping("/read/{id}")
-    public String toRead(Model model, @PathVariable("id") Long id) {
-        Blog blog = blogService.getBlogConvert(id);
+    public String toRead(Model model, @PathVariable("id") Long id,@RequestParam("uid") Long uid) {
+        Blog blog = blogService.getBlogConvert(id,uid);
         List<Tag> tags = tagService.getTagsByTagIds(blog.getTagIds());
         model.addAttribute("blog", blog);
         model.addAttribute("tags", tags);
@@ -79,9 +79,10 @@ public class IndexController {
 
     @PostMapping("/search")
     public String search(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                         Model model, String query) {
+                         Model model, String query
+                         ,Long uid) {
         Page<Blog> pages = new Page<>(page, 5);
-        IPage<Blog> blogIPage = blogService.searchBlogs(pages, query);
+        IPage<Blog> blogIPage = blogService.searchBlogs(pages, query,uid);
         model.addAttribute("pages", blogIPage);
         model.addAttribute("query", query);
         return "search";

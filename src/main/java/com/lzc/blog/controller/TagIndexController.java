@@ -39,8 +39,8 @@ public class TagIndexController {
             session.setAttribute("tags", tags);
         }
         if (tagId == -1) {
-            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5));
-            model.addAttribute("pages", blogIPage);
+//            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5));
+//            model.addAttribute("pages", blogIPage);
         } else {
             IPage<Blog> blogIPage = blogService.selectTagBlogs(new Page<>(pages, 5), tagId);
             model.addAttribute("pages", blogIPage);

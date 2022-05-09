@@ -40,11 +40,11 @@ public class TypeIndexController {
         }
 //        如果没有任何标签选中
         if (typeId == -1) {
-            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5));
-            model.addAttribute("pages", blogIPage);
+//            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5));
+//            model.addAttribute("pages", blogIPage);
         } else {
-            IPage<Blog> blogIPage = blogService.selectByCondition(new Page<>(pages, 5), new BlogQuery(null, typeId));
-            model.addAttribute("pages", blogIPage);
+//            IPage<Blog> blogIPage = blogService.selectByCondition(new Page<>(pages, 5), new BlogQuery(null, typeId));
+//            model.addAttribute("pages", blogIPage);
         }
         model.addAttribute("activeTypeId", typeId);
         return "types";

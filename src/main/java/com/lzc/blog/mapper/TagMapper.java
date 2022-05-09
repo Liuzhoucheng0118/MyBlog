@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lzc.blog.pojo.Tag;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -27,5 +28,7 @@ public interface TagMapper extends BaseMapper<Tag> {
     public List<Tag> getAllTags();
 
     public List<Tag> getTagsByTagIds(@Param("ids") String id);
+
+    public List<Tag> getTageForPage(@Param("number") int number, RowBounds rowBounds);
 
 }

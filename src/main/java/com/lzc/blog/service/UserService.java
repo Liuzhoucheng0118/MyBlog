@@ -7,4 +7,6 @@ public interface UserService {
     public User cheackUser(String username);
 
     public User getUserById(Long id);
+
+    int add(User user);
 }

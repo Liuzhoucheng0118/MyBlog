@@ -22,6 +22,7 @@ import java.util.Date;
 public class Image {
     @TableId(value = "id", type = IdType.AUTO)
     private int id;
+    private Integer uid;
     private String image;
     private String text;
     @DateTimeFormat(pattern = "yyyy-MM-dd")

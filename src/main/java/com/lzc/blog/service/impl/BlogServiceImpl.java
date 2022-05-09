@@ -8,6 +8,7 @@ import com.lzc.blog.mapper.BlogMapper;
 import com.lzc.blog.pojo.Blog;
 import com.lzc.blog.service.BlogService;
 import com.sun.javafx.collections.MappingChange;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,14 +22,15 @@ public class BlogServiceImpl implements BlogService {
     @Resource
     private BlogMapper blogMapper;
 
+
     @Override
-    public IPage<Blog> selectBlogs(Page<?> page) {
-        return blogMapper.selectBlogs(page);
+    public IPage<Blog> selectBlogs(Page<?> page, Long uid) {
+        return null;
     }
 
     @Override
-    public IPage<Blog> selectByCondition(Page<?> page, BlogQuery blogQuery) {
-        return blogMapper.selectByCondition(page, blogQuery);
+    public IPage<Blog> selectByCondition(Page<?> page, BlogQuery blogQuery, Long uid) {
+        return null;
     }
 
     @Override
@@ -45,9 +47,10 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog getBlogById(Long id) {
-        return blogMapper.getBlogById(id);
+    public Blog getBlogById(Long id, Long uid) {
+        return null;
     }
+
 
     @Override
     public Integer updataBlog(Blog blog) {
@@ -61,12 +64,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public IPage<Blog> searchBlogs(Page<?> page, String query) {
-        return blogMapper.searchBlogs(page, query);
+    public IPage<Blog> searchBlogs(Page<?> page, String query, Long uid) {
+        return null;
     }
 
     @Override
-    public Blog getBlogConvert(Long id) {
+    public Blog getBlogConvert(Long id, Long uid) {
         Blog blog = blogMapper.getBlogConvert(id);
         String blogcontent = blog.getContent();
         String content = MarkdownUtils.markdownToHtmlExtensions(blogcontent);
@@ -79,6 +82,7 @@ public class BlogServiceImpl implements BlogService {
 
         return blog;
     }
+
 
     @Override
     public Integer updateViews(Long blogId, Integer views) {
@@ -96,7 +100,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public HashMap<String, List<Blog>> getBlogOfYear() {
+    public HashMap<String, List<Blog>> getBlogOfYear(Long uid) {
         List<String> allYear = blogMapper.getAllYear();
         HashMap<String, List<Blog>> blogMap = new HashMap<>();
         for (String year : allYear) {
@@ -107,7 +111,13 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Long BlogNumber() {
-        return blogMapper.BlogNumber();
+    public Long BlogNumber(Long uid) {
+        return blogMapper.BlogNumber(uid);
     }
+
+    @Override
+    public List<Blog> getBlogByIds(@Param("ids") List<Long> ids,@Param("uid") Long uid){
+        return blogMapper.getBlogByIds(ids);
+    }
+
 }
