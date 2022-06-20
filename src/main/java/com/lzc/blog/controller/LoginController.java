@@ -32,32 +32,32 @@ public class LoginController {
     public String toLogin() {
         return "admin/login";
     }
+    @RequestMapping("/toRegister")
+    public String toRgister(RedirectAttributes attributes) {
+        attributes.addAttribute("message", "该用户名已存在");
+        return "admin/register";
+    }
 
-    @PostMapping("/register")
-    public String register(@RequestParam String username,
-                           @RequestParam String password,
-                           @RequestParam String repassword,
+    @RequestMapping("/register")
+    public String register(@RequestParam(value = "username",defaultValue = "user1") String username,
+                           @RequestParam(value = "password",defaultValue = "123") String password,
+                           @RequestParam(value = "repassword",defaultValue = "123") String repassword,
+                           @RequestParam(value = "nickname",defaultValue = "123") String nickname,
                            RedirectAttributes attributes){
-        User user = userService.cheackUser(username);
-        if(user!=null){
-            attributes.addFlashAttribute("message", "该用户名已存在");
-            return "redirect:/admin";
-        }else{
-            if(password.equals(repassword)){
-                BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-                password = bCryptPasswordEncoder.encode(password);
-                user.setNickname(username);
-                user.setPassword(password);
-                user.setUsername(username);
-                user.setCreateTime(new Date());
-                user.setAvatar("/images/avater.png");
-                userService.add(user);
-            }else{
-                attributes.addFlashAttribute("message", "密码不一致，请重新输入");
-                return "redirect:/admin";
-            }
+        System.out.println(nickname);
+        if(password.equals(repassword)) {
+            User user = new User();
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            password = bCryptPasswordEncoder.encode(password);
+            user.setNickname(username);
+            user.setNickname(nickname);
+            user.setPassword(password);
+            user.setUsername(username);
+            user.setAvatar("/images/12.png");
+            user.setCreateTime(new Date());
+            userService.add(user);
+            attributes.addAttribute("message", "注册成功");
         }
-
         return "admin/login";
     }
 
@@ -76,6 +76,11 @@ public class LoginController {
         } else {
             boolean flag = bCryptPasswordEncoder.matches(password, user.getPassword());
             if (flag) {
+                session.setAttribute("uid",user.getId().toString());
+                session.setAttribute("user",user);
+                User update = new User();
+                update.setUpdateTime(new Date());
+                userService.updata(update);
                 user.setPassword(null);
                 session.setAttribute("user", user);
                 return "admin/index";

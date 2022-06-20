@@ -31,7 +31,7 @@ public class TypeController {
     public String toTypePage(@RequestParam(value = "page", defaultValue = "1") Integer pages
             , Model model) {
         Page<Type> page = new Page<>(pages, 5);
-        Page<Type> typeList = typeService.page(page, null);
+        Page<Type> typeList = typeService.page(page,null);
         model.addAttribute("pages", typeList);
         return "admin/types";
     }

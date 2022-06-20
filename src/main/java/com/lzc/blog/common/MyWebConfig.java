@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-public class MyWebConfig implements WebMvcConfigurer {
+public class MyWebConfig implements WebMvcConfigurer{
 
     @Autowired
     @Qualifier(value = "loginInterceptor")
@@ -25,7 +25,9 @@ public class MyWebConfig implements WebMvcConfigurer {
 //        放行
         registration.excludePathPatterns(
                 "/admin/login",
-                "/admin"
+                "/admin",
+                "/admin/register",
+                "/admin/toRegister"
 //                "/captcha",
 //                "/user/login",
 //                "/login",

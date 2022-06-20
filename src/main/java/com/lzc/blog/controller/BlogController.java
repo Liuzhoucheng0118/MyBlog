@@ -12,10 +12,12 @@ import com.lzc.blog.service.TypeService;
 import com.lzc.blog.vo.BlogQuery;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +51,8 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public String toBlog(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model,@RequestParam("uid") Long uid) {
+    public String toBlog(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model, HttpServletRequest request) {
+        String uid = (String)request.getSession().getAttribute("uid");
         Page<Blog> pages = new Page<>(page, 5);
         IPage<Blog> blogIPage = blogServiceImpl.selectBlogs(pages,uid);
         model.addAttribute("pages", blogIPage);
@@ -61,7 +64,8 @@ public class BlogController {
     public String searchBlog(@RequestParam(value = "page", defaultValue = "1") Integer page,
                              Model model,
                              BlogQuery blogQuery,
-                             @RequestParam("uid") Long uid) {
+                             HttpServletRequest request) {
+        String uid = (String)request.getSession().getAttribute("uid");
         Page<Blog> pages = new Page<>(page, 5);
         IPage<Blog> blogIPage = blogServiceImpl.selectByCondition(pages, blogQuery,uid);
         model.addAttribute("pages", blogIPage);
@@ -72,6 +76,7 @@ public class BlogController {
     @PostMapping("/blogs")
     public String addBlog(Blog blog, HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
+        String uid = (String)session.getAttribute("uid");
         blog.setUser(user);
         Integer integer = blogServiceImpl.saveBlog(blog);
         if (integer == 1) {
@@ -84,8 +89,8 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/{id}/input")
-    public String editBlog(@PathVariable("id") Long id, Model model,@RequestParam("uid") Long uid) {
-        Blog blog = blogServiceImpl.getBlogById(id,uid);
+    public String editBlog(@PathVariable("id") Long id, Model model, String uid) {
+        Blog blog = blogServiceImpl.getBlogById(id);
         model.addAttribute("types", typeService.list());
         model.addAttribute("tags", tagService.list());
         model.addAttribute("blog", blog);

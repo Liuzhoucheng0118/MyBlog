@@ -14,4 +14,16 @@
             insert into t_user(nickname, username, password, email, avatar, type, create_time, update_time)
             VALUES(#{nickname},#{username},#{password},#{email},#{avatar},#{type},#{createTime},#{updateTime})
         </insert>
+
+        <select id="getUserList" resultType="User">
+            select * from t_user
+        </select>
+
+        <delete id="delete" parameterType="User">
+            delete  from t_user where id = #{id}
+        </delete>
+
+        <update id="updata" parameterType="User">
+            update t_user set update_time=#{updateTime}
+        </update>
 </mapper>

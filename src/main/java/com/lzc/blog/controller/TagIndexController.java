@@ -32,15 +32,16 @@ public class TagIndexController {
 
     @GetMapping("/tags/{id}")
     public String types(@RequestParam(value = "page", defaultValue = "1") Integer pages,
-                        Model model, @PathVariable("id") Long tagId, HttpSession session) {
+                        Model model, @PathVariable("id") Long tagId, HttpSession session,
+                        String uid) {
 
         if (session.getAttribute("tags") == null) {
             List<Tag> tags = tagService.getAllTags();
             session.setAttribute("tags", tags);
         }
         if (tagId == -1) {
-//            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5));
-//            model.addAttribute("pages", blogIPage);
+            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5),uid);
+            model.addAttribute("pages", blogIPage);
         } else {
             IPage<Blog> blogIPage = blogService.selectTagBlogs(new Page<>(pages, 5), tagId);
             model.addAttribute("pages", blogIPage);

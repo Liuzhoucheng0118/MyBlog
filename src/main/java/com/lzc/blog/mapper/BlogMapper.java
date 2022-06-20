@@ -14,9 +14,9 @@ import java.util.List;
 @Mapper
 public interface BlogMapper extends BaseMapper<Blog> {
 
-    public IPage<Blog> selectBlogs(Page<?> page);
+    public IPage<Blog> selectBlogs(Page<?> page,String uid);
 
-    public IPage<Blog> selectByCondition(Page<?> page, @Param("bq") BlogQuery blogQuery);
+    public IPage<Blog> selectByCondition(Page<?> page, @Param("bq") BlogQuery blogQuery,@Param("uid") String uid);
 
     public Integer saveBlog(Blog blog);
 
@@ -42,6 +42,6 @@ public interface BlogMapper extends BaseMapper<Blog> {
 
     public List<Blog> getBlogOfYear(String year);
 
-    public Long BlogNumber(@Param("uid") Long uid);
+    public Long BlogNumber(@Param("uid") String uid);
 
 }

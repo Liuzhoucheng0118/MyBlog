@@ -32,19 +32,21 @@ public class TypeIndexController {
 
     @GetMapping("/types/{id}")
     public String types(@RequestParam(value = "page", defaultValue = "1") Integer pages,
-                        Model model, @PathVariable("id") Long typeId, HttpSession session) {
+                        Model model, @PathVariable("id") Long typeId, HttpSession session,
+                        String uid) {
 //      session是否已经加入了type列表
         if (session.getAttribute("types") == null) {
             List<Type> typeBlogs = typeService.getTypeBlogs();
             session.setAttribute("types", typeBlogs);
         }
+         uid = session.getAttribute("nowid").toString();
 //        如果没有任何标签选中
         if (typeId == -1) {
-//            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5));
-//            model.addAttribute("pages", blogIPage);
+            IPage<Blog> blogIPage = blogService.selectBlogs(new Page<>(pages, 5),uid);
+            model.addAttribute("pages", blogIPage);
         } else {
-//            IPage<Blog> blogIPage = blogService.selectByCondition(new Page<>(pages, 5), new BlogQuery(null, typeId));
-//            model.addAttribute("pages", blogIPage);
+            IPage<Blog> blogIPage = blogService.selectByCondition(new Page<>(pages, 5), new BlogQuery(null, typeId),uid);
+            model.addAttribute("pages", blogIPage);
         }
         model.addAttribute("activeTypeId", typeId);
         return "types";

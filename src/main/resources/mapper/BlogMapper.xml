@@ -47,6 +47,7 @@
     <!--查询全部-->
     <select id="selectBlogs" parameterType="Blog" resultMap="BlogMap">
         <include refid="selectAll"></include>
+             where   b.user_id = #{uid}
     </select>
 
     <!--    根据id查询-->
@@ -81,6 +82,9 @@
             </if>
             <if test="bq.typeId != null">
                 AND b.type_id = #{bq.typeId}
+            </if>
+            <if test="uid != null">
+                AND b.user_id = #{uid}
             </if>
         </where>
         order by b.id desc
@@ -172,7 +176,12 @@
     </select>
 
     <select id="BlogNumber" resultType="long">
-        select count(id) from t_blog;
+        select count(*) from t_blog b
+        <where>
+            <if test="uid  != null">
+                b.user_id = #{uid}
+            </if>
+        </where>
     </select>
 
 </mapper>

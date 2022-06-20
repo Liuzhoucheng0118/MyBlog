@@ -24,13 +24,13 @@ public class BlogServiceImpl implements BlogService {
 
 
     @Override
-    public IPage<Blog> selectBlogs(Page<?> page, Long uid) {
-        return null;
+    public IPage<Blog> selectBlogs(Page<?> page,String uid) {
+        return blogMapper.selectBlogs(page,uid);
     }
 
     @Override
-    public IPage<Blog> selectByCondition(Page<?> page, BlogQuery blogQuery, Long uid) {
-        return null;
+    public IPage<Blog> selectByCondition(Page<?> page, BlogQuery blogQuery, String uid) {
+        return blogMapper.selectByCondition(page,blogQuery,uid);
     }
 
     @Override
@@ -47,8 +47,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog getBlogById(Long id, Long uid) {
-        return null;
+    public Blog getBlogById(Long id) {
+        return blogMapper.getBlogById(id);
     }
 
 
@@ -64,12 +64,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public IPage<Blog> searchBlogs(Page<?> page, String query, Long uid) {
-        return null;
+    public IPage<Blog> searchBlogs(Page<?> page, String query) {
+        return blogMapper.searchBlogs(page,query);
     }
 
     @Override
-    public Blog getBlogConvert(Long id, Long uid) {
+    public Blog getBlogConvert(Long id) {
         Blog blog = blogMapper.getBlogConvert(id);
         String blogcontent = blog.getContent();
         String content = MarkdownUtils.markdownToHtmlExtensions(blogcontent);
@@ -100,7 +100,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public HashMap<String, List<Blog>> getBlogOfYear(Long uid) {
+    public HashMap<String, List<Blog>> getBlogOfYear(String uid) {
         List<String> allYear = blogMapper.getAllYear();
         HashMap<String, List<Blog>> blogMap = new HashMap<>();
         for (String year : allYear) {
@@ -111,12 +111,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Long BlogNumber(Long uid) {
+    public Long BlogNumber(String uid) {
         return blogMapper.BlogNumber(uid);
     }
 
     @Override
-    public List<Blog> getBlogByIds(@Param("ids") List<Long> ids,@Param("uid") Long uid){
+    public List<Blog> getBlogByIds(@Param("ids") List<Long> ids){
         return blogMapper.getBlogByIds(ids);
     }
 

@@ -3,7 +3,7 @@
 <head th:fragment="head">
     <meta charset="UTF-8">
     <title>ZHEMU的小世界</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
     <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
     <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
@@ -24,13 +24,15 @@
                 <a href="#" th:href="@{/admin/friends}" class="m-item item m-mobile-hide" th:classappend="${n==3}?'active'"><i class=" user icon"></i>友链</a>
                 <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==4}?'active'"><i class=" tags icon"></i>标签</a>
                 <a href="#" th:href="@{/admin/logs}" class="m-item item m-mobile-hide" th:classappend="${n==5}?'active'"><i class=" tags icon"></i>日志</a>
+                <a th:unless="${session.user.isAdmin}!=1" th:href="@{/user/admin/toIndex}" class="m-item item m-mobile-hide" th:classappend="${n==5}?'active'"><i class=" tags icon"></i>用户</a>
+
 
 
                 <div class="right m-item m-mobile-hide menu">
                     <div class="ui dropdown item">
                         <div class="text">
                             <img class="ui avatar image" src="../../static/images/avater.png" th:src="@{/images/avater.png}">
-                            ZHEMU
+                            user
                         </div>
                         <i class="dropdown icon"></i>
                         <div class=" menu">
@@ -70,9 +72,9 @@
                 <div class="five wide column">
                     <div class="ui inverted link list">
                         <h4 class="ui inverted header">最新博客</h4>
-                        <a href="#" class="item">文章：</a>
-                        <a href="#" class="item">访问：</a>
-                        <a href="#" class="item">点赞：</a>
+                        <a href="#" class="item">文章：1</a>
+                        <a href="#" class="item">访问：178</a>
+                        <a href="#" class="item">点赞：12</a>
                     </div>
                 </div>
             </div>
@@ -85,8 +87,8 @@
 
 
 <th:block th:fragment="script">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="../../static/lib/qrcode/qrcode.js" th:src="@{/lib/qrcode/qrcode.js}"></script>
     <script src="../../static/lib/editormd/editormd.js" th:src="@{/lib/editormd/editormd.js}"></script>
 </th:block>

@@ -30,7 +30,8 @@ public class User {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Data updateTime;
-
+    private Date updateTime;
+    private String show;
     private List<Blog> blogs;
+    private String isAdmin;
 }
